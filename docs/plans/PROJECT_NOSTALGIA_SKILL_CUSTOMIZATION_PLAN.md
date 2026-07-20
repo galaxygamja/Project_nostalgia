@@ -113,8 +113,8 @@
 - [x] export metadata에 Google Docs file ID, source URL, revision 및 repository migration date를 기록했다.
 - [x] `SSOT_POINTER.md`의 verified additions와 로컬 문서를 대조했다.
 - [x] `KNOWN_CONFLICTS.md`의 항목을 정본과 대조하고 아직 승인되지 않은 항목을 유지했다.
-- [ ] 실제 Godot project version을 `project.godot` 또는 실행 가능한 Godot binary에서 확인한다. 원본 스킬의 4.3+/4.7+ 가정을 그대로 채택하지 않는다.
-- [ ] 원본 bundle의 license 파일과 재사용 조건을 스킬별로 기록한다.
+- [ ] 실제 Godot project version을 확인한다. 감사 결과, 저장소에는 `project.godot`, 프로젝트 scene/GDScript, 실행 binary가 없어 실제 버전을 확정할 수 없었다. `Godot 4.7.1`은 UI prompt의 목표 호환 후보로만 유지한다.
+- [x] 원본 bundle의 27개 스킬에 대해 license 파일과 재사용 조건을 스킬별로 기록했다. MIT 17, Apache-2.0 4, LGPL-3.0 4, 라이선스 불명 2로 판정했다.
 - [x] 로컬 작업 트리를 공개 GitHub repository의 `origin/main`에 연결하고 전용 migration 브랜치를 만들었다.
 - [ ] 검토된 staging 후보를 선택적으로 `git add`하고 commit/push한다. 이번 작업에서는 수행하지 않는다.
 - [ ] 스킬 커스터마이징을 시작한다. 이번 작업에서는 시작하지 않는다.
@@ -131,13 +131,13 @@
 - 공개 GitHub 접근 및 `origin/main` fetch — **통과**
 - migration branch — **`migration/google-drive-to-github`, origin/main 기반**
 - secret/`.godot`/중복 handoff staging 검사 — **통과**, handoff는 `.gitignore`로 제외
-- Git commit/push — **미수행(의도적)**
-- Godot version 증거 기록 — **미완료**
-- 원본 스킬 라이선스 재사용 조건 정리 — **미완료**
+- Git migration commit/push — **완료**, `migration/google-drive-to-github` 원격 브랜치에 반영
+- Godot version 증거 기록 — **감사 완료, 실제 버전 확인 불가**. SSoT는 최종 버전을 `[미정]`으로 유지하며 UI prompt만 4.7.1을 목표 후보로 명시
+- 원본 스킬 라이선스 재사용 조건 정리 — **감사 완료**. MIT 17, Apache-2.0 4, LGPL-3.0 4, 불명 2
 
 ### Phase 0 판정
 
-**저장소 정규화와 GitHub 이관 준비 범위는 통과했다.** canonical SSoT, metadata, origin 연결, migration 브랜치, ignore 및 안전 검사가 준비되었다. 다만 전체 스킬 커스터마이징 Phase 0을 완전히 종료하려면 실제 Godot 버전 확인과 원본 스킬별 라이선스 재사용 조건 정리가 남아 있다. commit, push, 스킬 커스터마이징은 아직 시작하지 않는다.
+**부분 통과.** 저장소 정규화·GitHub 이관과 27개 스킬의 라이선스 분류는 완료되었다. 실제 Godot 버전은 근거 파일과 실행 binary 부재로 확인할 수 없어 미완료 상태다. 또한 라이선스 불명인 `dialogue-system`과 `godot-master`는 사용·수정·공개 재배포에서 제외해야 한다. 스킬 커스터마이징은 아직 시작하지 않는다.
 
 ## Phase 1 — 스킬 계약과 eval 체계 설계
 
