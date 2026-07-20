@@ -1,0 +1,26 @@
+items.json 설명
+
+목적
+- 일반 아이템, 장비, 출입 인증 정보, 기록물의 기능을 정의한다.
+
+항목
+- id: 아이템 ID.
+- name: UI 표시 이름.
+- category: consumable, equipment, credential, record 등 분류.
+- stackable: 여러 개를 같은 인벤토리 항목에 쌓을 수 있는지 여부.
+- maximum_stack: 최대 중첩 수. stackable이 false이면 1.
+- consumable: 사용 시 수량이 감소하는지 여부.
+- requirements: 사용 또는 획득 조건.
+- passive_effects: 소지하는 동안 적용할 효과.
+- use_effects: 직접 사용했을 때 적용할 효과.
+- unlock_flags: 획득 시 활성화할 플래그 키 목록.
+
+처리
+1. 획득 시 stackable과 maximum_stack을 검사한다.
+2. unlock_flags를 활성화한다.
+3. passive_effects가 있다면 관련 상태 계산에 등록한다.
+4. 사용 시 requirements를 검사하고 use_effects를 적용한다.
+5. consumable이면 수량을 1 또는 지정량만큼 감소시킨다.
+
+주의
+- 플레이어가 암호를 알고 있어도 관련 아이템이나 플래그가 없으면 UI를 잠그는 용도로 활용할 수 있다.

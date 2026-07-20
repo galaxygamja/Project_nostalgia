@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "data_type": "formula",
+  "entries": [
+    {
+      "id": "XXXX_001",
+      "name": "formula_name",
+      "description": "formula_description",
+      "result_type": "float",
+      "expression": {
+        "operator": "add",
+        "values": [
+          {
+            "variable": "variable_path"
+          },
+          {
+            "constant": 0.0
+          }
+        ]
+      },
+      "clamp": {
+        "minimum": 0.0,
+        "maximum": 100.0
+      },
+      "fallback_value": 0.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+game_config.json 설명
+
+목적
+- 게임 전체 시간 규칙과 핵심 JSON 파일 경로를 정의한다.
+
+game 항목
+- max_days: 최대 게임 날짜 수. 현재 1000.
+- slots_per_day: 하루의 30분 슬롯 수. 현재 48.
+- minutes_per_slot: 슬롯 하나의 실제 분. 현재 30.
+- start_day_index: 새 게임 시작 날짜 인덱스. 0은 DAY 1.
+- start_slot_index: 새 게임 시작 시간 슬롯. 12는 06:00.
+- id_pattern: 모든 데이터 ID의 기본 정규식.
+
+paths 항목
+- initial_state: initial_game_state.json의 Godot res:// 경로.
+- timetable: timetable.json의 Godot res:// 경로.
+- id_code_rules: id_code_rules.json의 Godot res:// 경로.
+
+시간 계산
+- 절대 슬롯 = day_index * slots_per_day + slot_index.
+- 전체 슬롯 수는 max_days * slots_per_day로 계산한다.
+- 화면의 DAY 표시는 day_index + 1이다.
+
+유효성 검사
+- max_days는 1000이어야 한다.
+- slots_per_day는 48이어야 한다.
+- minutes_per_slot은 30이어야 한다.
+- 시작 날짜와 슬롯이 허용 범위 안이어야 한다.
+- paths의 파일이 실제로 존재해야 한다.

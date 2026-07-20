@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "data_type": "id_code_rules",
+  "id_pattern": "^[A-Z]{4}_[0-9]{3}$",
+  "reserved_sequence": "000",
+  "unused_code": "X",
+  "data_types": {
+    "I": {
+      "name": "encounter",
+      "positions": {
+        "2": {
+          "S": "story",
+          "R": "random",
+          "F": "fixed_schedule",
+          "E": "emergency",
+          "N": "normal"
+        },
+        "3": {
+          "B": "base",
+          "O": "outdoor",
+          "S": "sleep",
+          "D": "deduction",
+          "C": "character",
+          "G": "general"
+        },
+        "4": {
+          "O": "one_time",
+          "R": "repeatable",
+          "C": "cooldown",
+          "D": "daily_once",
+          "X": "defined_in_data"
+        }
+      }
+    },
+    "C": {
+      "name": "character",
+      "positions": {
+        "2": {
+          "M": "main",
+          "S": "supporting",
+          "N": "normal_npc"
+        },
+        "3": {
+          "C": "command",
+          "E": "engineering",
+          "M": "medical",
+          "X": "exploration",
+          "R": "research",
+          "A": "administration"
+        },
+        "4": {
+          "B": "base",
+          "O": "outside",
+          "N": "neutral",
+          "H": "hostile"
+        }
+      }
+    },
+    "T": {
+      "name": "task",
+      "positions": {
+        "2": {
+          "F": "facility",
+          "C": "character",
+          "E": "exploration",
+          "R": "research",
+          "A": "administration",
+          "G": "general"
+        },
+        "3": {
+          "N": "normal",
+          "U": "urgent",
+          "S": "story",
+          "D": "daily"
+        },
+        "4": {
+          "O": "one_time",
+          "R": "repeatable",
+          "D": "daily",
+          "X": "defined_in_data"
+        }
+      }
+    },
+    "F": {
+      "name": "facility",
+      "positions": {
+        "2": { "X": "unused" },
+        "3": { "X": "unused" },
+        "4": { "X": "unused" }
+      }
+    },
+    "R": {
+      "name": "resource",
+      "positions": {
+        "2": { "X": "unused" },
+        "3": { "X": "unused" },
+        "4": { "X": "unused" }
+      }
+    },
+    "A": {
+      "name": "action",
+      "positions": {
+        "2": { "X": "unused" },
+        "3": { "X": "unused" },
+        "4": { "X": "unused" }
+      }
+    },
+    "S": {
+      "name": "fixed_schedule",
+      "positions": {
+        "2": { "X": "unused" },
+        "3": { "X": "unused" },
+        "4": { "X": "unused" }
+      }
+    },
+    "P": {
+      "name": "encounter_pool",
+      "positions": {
+        "2": { "X": "unused" },
+        "3": { "X": "unused" },
+        "4": { "X": "unused" }
+      }
+    },
+    "M": {
+      "name": "item",
+      "positions": {
+        "2": { "X": "unused" },
+        "3": { "X": "unused" },
+        "4": { "X": "unused" }
+      }
+    },
+    "L": {
+      "name": "clue",
+      "positions": {
+        "2": { "X": "unused" },
+        "3": { "X": "unused" },
+        "4": { "X": "unused" }
+      }
+    },
+    "D": {
+      "name": "deduction",
+      "positions": {
+        "2": { "X": "unused" },
+        "3": { "X": "unused" },
+        "4": { "X": "unused" }
+      }
+    },
+    "O": {
+      "name": "location",
+      "positions": {
+        "2": { "X": "unused" },
+        "3": { "X": "unused" },
+        "4": { "X": "unused" }
+      }
+    },
+    "E": {
+      "name": "status_effect",
+      "positions": {
+        "2": { "X": "unused" },
+        "3": { "X": "unused" },
+        "4": { "X": "unused" }
+      }
+    },
+    "G": {
+      "name": "character_trait",
+      "positions": {
+        "2": { "X": "unused" },
+        "3": { "X": "unused" },
+        "4": { "X": "unused" }
+      }
+    },
+    "Q": {
+      "name": "flag_definition",
+      "positions": {
+        "2": { "X": "unused" },
+        "3": { "X": "unused" },
+        "4": { "X": "unused" }
+      }
+    },
+    "X": {
+      "name": "formula",
+      "positions": {
+        "2": { "X": "unused" },
+        "3": { "X": "unused" },
+        "4": { "X": "unused" }
+      }
+    }
+  }
+}

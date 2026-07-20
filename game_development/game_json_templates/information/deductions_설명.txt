@@ -1,0 +1,27 @@
+deductions.json 설명
+
+목적
+- 여러 단서를 조합해 결론을 만들고 새로운 업무, 인카운터, 플래그를 해금한다.
+
+항목
+- id: 추론 ID.
+- name: UI 표시 이름.
+- required_clue_ids: 반드시 확보해야 하는 단서 ID 목록.
+- excluded_flags: 활성 상태이면 추론을 막는 플래그 키 목록.
+- time_cost_slots: 추론에 소비되는 30분 슬롯 수.
+- success_formula_id: 성공 여부 또는 점수를 계산할 공식 ID. 항상 성공하면 null.
+- success_effects: 성공 시 적용할 효과.
+- unlocked_task_ids: 성공 시 생성 또는 활성화할 업무 ID.
+- unlocked_encounter_ids: 성공 시 출력 가능 상태로 만들 인카운터 ID.
+
+처리
+1. required_clue_ids를 모두 보유했는지 확인한다.
+2. excluded_flags가 비활성인지 확인한다.
+3. 다음 책임자 필수 고정 일정과 time_cost_slots가 충돌하는지 검사한다.
+4. 시간이 지나면 success_formula_id를 계산하거나 자동 성공시킨다.
+5. success_effects를 적용한다.
+6. 업무와 인카운터를 해금하고 관련 풀을 갱신한다.
+
+주의
+- 메타 지식만으로 추론 UI를 열지 않고 실제 단서 보유 여부를 조건으로 사용한다.
+- 참조하는 단서, 업무, 인카운터 ID가 모두 존재해야 한다.

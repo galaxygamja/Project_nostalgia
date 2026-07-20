@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "data_type": "item",
+  "entries": [
+    {
+      "id": "MXXX_001",
+      "name": "item_name",
+      "category": "item_category",
+      "stackable": false,
+      "maximum_stack": 1,
+      "consumable": false,
+      "requirements": {},
+      "passive_effects": [],
+      "use_effects": [],
+      "unlock_flags": []
+    }
+  ]
+}

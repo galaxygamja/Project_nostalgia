@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "data_type": "task",
+  "entries": [
+    {
+      "id": "TGNO_001",
+      "name": "task_name",
+      "category": "task_category",
+      "description": "task_description",
+      "target_id": null,
+      "required_skill": "skill_name",
+      "difficulty": 0.0,
+      "base_duration_slots": 1,
+      "priority": "normal",
+      "delegate_allowed": true,
+      "commander_can_perform": true,
+      "deadline_slots": 1,
+      "requirements": {},
+      "success_formula_id": null,
+      "duration_formula_id": null,
+      "outcome_table": [
+        {
+          "minimum_score": 0.0,
+          "result": "success",
+          "effects": [],
+          "add_encounter_ids": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "data_type": "character",
+  "entries": [
+    {
+      "id": "CMCB_001",
+      "name": "책임자",
+      "role": "commander",
+      "specialty": "command",
+      "default_state": {
+        "alive": true,
+        "available": true,
+        "location_id": "OXXX_001",
+        "health": 100.0,
+        "condition": 70.0,
+        "fatigue": 20.0,
+        "stress": 20.0,
+        "trust": 100.0,
+        "awake_slots": 2,
+        "judgement_reliability": 100.0,
+        "injury_level": 0
+      },
+      "skills": {
+        "command": 60.0,
+        "engineering": 20.0,
+        "medical": 15.0,
+        "exploration": 20.0,
+        "research": 30.0,
+        "administration": 50.0
+      },
+      "trait_ids": [],
+      "starting_task_ids": []
+    },
+    {
+      "id": "CMEB_001",
+      "name": "기술 책임자",
+      "role": "specialist",
+      "specialty": "engineering",
+      "default_state": {
+        "alive": true,
+        "available": true,
+        "location_id": "OXXX_001",
+        "health": 100.0,
+        "condition": 80.0,
+        "fatigue": 15.0,
+        "stress": 10.0,
+        "trust": 50.0,
+        "awake_slots": 4,
+        "judgement_reliability": 100.0,
+        "injury_level": 0
+      },
+      "skills": {
+        "command": 20.0,
+        "engineering": 80.0,
+        "medical": 10.0,
+        "exploration": 30.0,
+        "research": 45.0,
+        "administration": 20.0
+      },
+      "trait_ids": [
+        "GXXX_001"
+      ],
+      "starting_task_ids": []
+    }
+  ]
+}

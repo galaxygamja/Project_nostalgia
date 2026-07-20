@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "data_type": "task",
+  "entries": [
+    {
+      "id": "TFNO_001",
+      "name": "발전기 점검",
+      "category": "facility",
+      "description": "발전기의 이상 징후를 점검한다.",
+      "target_id": "FXXX_001",
+      "required_skill": "engineering",
+      "difficulty": 45.0,
+      "base_duration_slots": 6,
+      "priority": "high",
+      "delegate_allowed": true,
+      "commander_can_perform": true,
+      "deadline_slots": 24,
+      "requirements": {},
+      "success_formula_id": "XXXX_001",
+      "duration_formula_id": "XXXX_002",
+      "outcome_table": [
+        {
+          "minimum_score": 90.0,
+          "result": "critical_success",
+          "effects": [
+            {
+              "target": "facility:FXXX_001.condition",
+              "operation": "add",
+              "value": 20.0
+            }
+          ],
+          "add_encounter_ids": []
+        },
+        {
+          "minimum_score": 60.0,
+          "result": "success",
+          "effects": [
+            {
+              "target": "facility:FXXX_001.condition",
+              "operation": "add",
+              "value": 10.0
+            }
+          ],
+          "add_encounter_ids": []
+        },
+        {
+          "minimum_score": 0.0,
+          "result": "failure",
+          "effects": [
+            {
+              "target": "facility:FXXX_001.condition",
+              "operation": "add",
+              "value": -10.0
+            }
+          ],
+          "add_encounter_ids": [
+            "IRBC_001"
+          ]
+        }
+      ]
+    }
+  ]
+}

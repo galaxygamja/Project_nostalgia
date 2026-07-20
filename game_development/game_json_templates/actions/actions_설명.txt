@@ -1,0 +1,26 @@
+actions.json 설명
+
+목적
+- 수면, 기지 관리, 기술자 관리, 외부 탐사, 추론 등 플레이어 자유 행동을 정의한다.
+
+항목
+- id: 행동 ID.
+- name: UI 표시 이름.
+- category: 행동 분류. 인카운터 풀 선택에도 사용.
+- duration_slots: 고정 소요 슬롯. 시간을 직접 정하면 null.
+- duration_range: 플레이어가 정할 minimum_slots와 maximum_slots. 고정 행동이면 null.
+- encounter_pool_ids: 행동 중 또는 완료 시 사용할 인카운터 풀 ID.
+- requirements: 행동 선택 가능 조건.
+- effects_per_slot: 행동 진행 중 30분마다 적용할 효과.
+- completion_effects: 행동 완료 시 한 번 적용할 효과.
+- interruptible_by_emergency: 긴급 사건이 행동을 중단할 수 있는지 여부.
+
+고정 일정 충돌 검사
+1. 현재 절대 슬롯과 행동 종료 절대 슬롯을 계산한다.
+2. 다음 책임자 필수 고정 일정의 절대 슬롯을 찾는다.
+3. 행동 종료가 일정 시작보다 늦으면 행동을 비활성화한다.
+4. 유효한 대리인이 사전 지정된 일정은 책임자 필수 일정에서 제외할 수 있다.
+
+주의
+- duration_slots와 duration_range 중 하나만 사용한다.
+- 모든 시간값은 30분 단위의 정수 슬롯이어야 한다.

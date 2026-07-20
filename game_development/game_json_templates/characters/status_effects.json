@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "data_type": "status_effect",
+  "entries": [
+    {
+      "id": "EXXX_001",
+      "name": "경상",
+      "description": "가벼운 부상으로 업무 효율이 감소한다.",
+      "duration_slots": 48,
+      "stack_policy": "refresh_duration",
+      "maximum_stacks": 1,
+      "effects_on_apply": [],
+      "effects_per_slot": [
+        {
+          "target": "self.condition",
+          "operation": "add",
+          "value": -0.2
+        }
+      ],
+      "effects_on_remove": []
+    }
+  ]
+}

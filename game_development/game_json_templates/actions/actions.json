@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "data_type": "action",
+  "entries": [
+    {
+      "id": "AXXX_001",
+      "name": "기지 관리",
+      "category": "base_management",
+      "duration_slots": 2,
+      "duration_range": null,
+      "encounter_pool_ids": [
+        "PXXX_002"
+      ],
+      "requirements": {
+        "minimum_values": {
+          "commander.health": 10.0
+        }
+      },
+      "effects_per_slot": [
+        {
+          "target": "commander.fatigue",
+          "operation": "add",
+          "value": 2.0
+        }
+      ],
+      "completion_effects": [],
+      "interruptible_by_emergency": true
+    },
+    {
+      "id": "AXXX_002",
+      "name": "수면",
+      "category": "sleep",
+      "duration_slots": null,
+      "duration_range": {
+        "minimum_slots": 1,
+        "maximum_slots": 20
+      },
+      "encounter_pool_ids": [
+        "PXXX_001"
+      ],
+      "requirements": {},
+      "effects_per_slot": [
+        {
+          "target": "commander.fatigue",
+          "operation": "add",
+          "value": -4.0
+        }
+      ],
+      "completion_effects": [],
+      "interruptible_by_emergency": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "data_type": "character_trait",
+  "entries": [
+    {
+      "id": "GXXX_001",
+      "name": "완벽주의",
+      "description": "시설 업무의 성공 점수는 증가하지만 피로 누적도 커진다.",
+      "requirements": {},
+      "modifiers": [
+        {
+          "target": "task.facility.success_score",
+          "operation": "add",
+          "value": 5.0
+        },
+        {
+          "target": "self.fatigue_gain",
+          "operation": "multiply",
+          "value": 1.2
+        }
+      ],
+      "granted_encounter_ids": []
+    }
+  ]
+}

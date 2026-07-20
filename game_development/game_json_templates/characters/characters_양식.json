@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "data_type": "character",
+  "entries": [
+    {
+      "id": "CNCN_001",
+      "name": "character_name",
+      "role": "role",
+      "specialty": "specialty",
+      "default_state": {
+        "alive": true,
+        "available": true,
+        "location_id": "OXXX_001",
+        "health": 100.0,
+        "condition": 100.0,
+        "fatigue": 0.0,
+        "stress": 0.0,
+        "trust": 0.0,
+        "awake_slots": 0,
+        "judgement_reliability": 100.0,
+        "injury_level": 0
+      },
+      "skills": {
+        "command": 0.0,
+        "engineering": 0.0,
+        "medical": 0.0,
+        "exploration": 0.0,
+        "research": 0.0,
+        "administration": 0.0
+      },
+      "trait_ids": [],
+      "starting_task_ids": []
+    }
+  ]
+}

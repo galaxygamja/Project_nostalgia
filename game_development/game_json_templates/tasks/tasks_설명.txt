@@ -1,0 +1,46 @@
+tasks.json 설명
+
+목적
+- 발전기 점검, 의료 검사, 탐사 승인 등 업무의 원형과 결과 규칙을 정의한다.
+
+정의 항목
+- id: 업무 정의 ID.
+- name: UI 표시 이름.
+- category: facility, character, exploration, research, administration 등 분류.
+- description: 업무 설명.
+- target_id: 업무 대상 시설, 캐릭터 또는 장소 ID.
+- required_skill: 성공 점수에 사용할 담당자의 주요 능력.
+- difficulty: 기본 난이도.
+- base_duration_slots: 기본 소요 슬롯 수.
+- priority: low, normal, high, critical 등의 우선도.
+- delegate_allowed: 캐릭터에게 위임 가능한지 여부.
+- commander_can_perform: 책임자가 직접 처리 가능한지 여부.
+- deadline_slots: 생성 시각부터 마감까지의 슬롯 수.
+- requirements: 생성 또는 수행 가능 조건.
+- success_formula_id: 성공 점수를 계산할 공식 ID.
+- duration_formula_id: 실제 소요 슬롯을 계산할 공식 ID.
+- outcome_table: 점수별 결과와 효과.
+
+outcome_table 항목
+- minimum_score: 해당 결과가 적용될 최소 점수.
+- result: critical_success, success, partial_success, failure, critical_failure 등 결과명.
+- effects: 결과 확정 시 적용할 효과.
+- add_encounter_ids: 결과로 출력 가능해지는 인카운터 ID.
+
+중요 규칙
+- outcome_table은 minimum_score가 높은 항목부터 내림차순으로 작성한다.
+- 판정 시 위에서 아래로 검사해 처음 만족하는 결과를 사용한다.
+
+런타임 업무 상태
+- instance_id: 동일 업무가 여러 번 발생할 때 사용하는 고유 ID. 예: TFNO_001@000001.
+- definition_id: 원본 업무 ID.
+- status: pending, assigned, in_progress, completed, failed, ignored, cancelled.
+- assigned_character_id: 담당 캐릭터 ID 또는 null.
+- created_at: 생성 시간 좌표.
+- deadline_at: 마감 시간 좌표.
+- completion_at: 완료 시간 좌표 또는 null.
+- remaining_slots: 남은 업무 시간.
+- result: 결과명 또는 null.
+
+주의
+- JSON에는 업무 원형을 보관하고 변화하는 런타임 상태는 별도로 관리한다.

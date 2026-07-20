@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "data_type": "flag_definition",
+  "entries": [
+    {
+      "id": "QXXX_001",
+      "key": "generator_access",
+      "name": "발전실 접근 권한",
+      "description": "발전실 관련 행동과 선택지를 활성화한다.",
+      "value_type": "bool",
+      "default_value": false
+    },
+    {
+      "id": "QXXX_002",
+      "key": "ai_intrusion_level",
+      "name": "AI 침투 단계",
+      "description": "현재 AI 침투 진행도를 나타낸다.",
+      "value_type": "int",
+      "default_value": 0
+    },
+    {
+      "id": "QXXX_003",
+      "key": "tutorial_completed",
+      "name": "튜토리얼 완료",
+      "description": "초기 안내 과정 완료 여부를 나타낸다.",
+      "value_type": "bool",
+      "default_value": false
+    }
+  ]
+}

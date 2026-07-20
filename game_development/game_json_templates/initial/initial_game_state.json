@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "data_type": "initial_game_state",
+  "initial_state": {
+    "current_time": {
+      "day_index": 0,
+      "slot_index": 12
+    },
+    "commander_id": "CMCB_001",
+    "active_character_ids": [
+      "CMEB_001",
+      "CMMB_001",
+      "CMXO_001",
+      "CMRB_001",
+      "CMAB_001"
+    ],
+    "resource_values": {
+      "RXXX_001": 1840.0,
+      "RXXX_002": 9260.0,
+      "RXXX_003": 100.0,
+      "RXXX_004": 72.0,
+      "RXXX_005": 143.0,
+      "RXXX_006": 28.0
+    },
+    "facility_states": {
+      "FXXX_001": {
+        "condition": 85.0,
+        "efficiency": 90.0,
+        "operational": true
+      }
+    },
+    "character_overrides": {
+      "CMCB_001": {
+        "condition": 70.0,
+        "stress": 20.0,
+        "health": 100.0,
+        "awake_slots": 2
+      }
+    },
+    "initial_task_ids": [],
+    "active_pool_ids": [
+      "PXXX_001",
+      "PXXX_002"
+    ],
+    "inventory": {
+      "MXXX_001": 1
+    },
+    "clue_ids": [],
+    "deduction_ids": [],
+    "flags": {
+      "tutorial_completed": false,
+      "generator_access": true,
+      "ai_intrusion_level": 0
+    }
+  }
+}

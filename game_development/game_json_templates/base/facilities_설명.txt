@@ -1,0 +1,27 @@
+facilities.json 설명
+
+목적
+- 발전, 산소, 식량, 식수, 의료, 통신, 거주 시설의 기본 상태와 기능을 정의한다.
+
+항목
+- id: 시설 ID.
+- name: UI 표시 이름.
+- facility_type: power, oxygen, medical 등 시설 분류.
+- default_state: 새 런타임 시설을 만들 때 복사할 기본 상태.
+- condition: 시설 내구 상태. 기본 범위 0~100.
+- efficiency: 시설 효율. 생산 및 소비 계산에 사용할 수 있음.
+- operational: 현재 작동 가능 여부.
+- level: 업그레이드 단계.
+- produces: 생산하는 resource_id와 amount_per_slot 목록.
+- consumes: 소비하는 resource_id와 amount_per_slot 목록.
+- related_task_ids: 시설과 관련된 업무 정의 ID 목록.
+- tags: 검색, 조건 검사, UI 분류용 문자열 목록.
+
+처리
+- operational이 false이면 기본 생산을 중단한다.
+- 실제 생산량은 amount_per_slot과 efficiency를 사용해 계산할 수 있다.
+- condition이 임계값을 넘나들면 업무 또는 인카운터 풀 갱신 조건을 검사한다.
+
+주의
+- initial_game_state.json의 facility_states가 default_state를 덮어쓸 수 있다.
+- produces와 consumes에서 참조하는 자원 ID가 반드시 존재해야 한다.

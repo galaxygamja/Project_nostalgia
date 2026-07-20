@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "data_type": "encounter_pool",
+  "entries": [
+    {
+      "id": "PXXX_001",
+      "name": "수면 인카운터",
+      "category": "sleep",
+      "draw_mode": "weighted_without_replacement",
+      "reset_policy": "daily",
+      "encounters": [
+        {
+          "encounter_id": "IRSC_001",
+          "weight": 50.0,
+          "enabled": true
+        },
+        {
+          "encounter_id": "IRSC_002",
+          "weight": 30.0,
+          "enabled": false
+        },
+        {
+          "encounter_id": "ISSO_001",
+          "weight": 10.0,
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "PXXX_002",
+      "name": "기지 관리 인카운터",
+      "category": "base_management",
+      "draw_mode": "weighted_with_replacement",
+      "reset_policy": "never",
+      "encounters": [
+        {
+          "encounter_id": "IRBC_001",
+          "weight": 20.0,
+          "enabled": false
+        }
+      ]
+    }
+  ]
+}

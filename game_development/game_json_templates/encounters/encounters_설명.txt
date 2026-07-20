@@ -1,0 +1,42 @@
+encounters.json 설명
+
+목적
+- 인카운터 본문, 발생 조건, 선택지, 결과, 반복 정책을 정의한다.
+
+기본 항목
+- id: 조합형 인카운터 ID. 네 문자 분류와 실제 내용이 일치해야 한다.
+- name: 개발 및 UI용 이름.
+- category: sleep, base, outdoor, deduction, character 등 발생 환경.
+- importance: normal, major, story, fixed_schedule 등 중요도.
+- repeat_policy: 반복과 쿨다운 정책.
+- requirements: 인카운터가 현재 유효한지 검사하는 조건.
+- pages: 순서대로 표시할 텍스트 페이지.
+- choices: 플레이어 선택지. 자동 인카운터는 빈 배열.
+- automatic_effects: 선택과 관계없이 자동 적용할 효과.
+
+pages 항목
+- speaker_id: 말하는 캐릭터 ID. 서술문은 null.
+- text: 화면에 표시할 문장.
+
+choices 항목
+- choice_id: 해당 인카운터 안에서 고유한 지역 ID.
+- text: 선택지 표시 문장.
+- requirements: 선택 가능 조건.
+- effects: 선택 결과 효과.
+- next_encounter_id: 이어지는 인카운터 ID. 없으면 null.
+
+repeat_policy.type
+- one_time: 한 번 완료하면 다시 발생하지 않는다.
+- repeatable: 조건이 맞으면 반복 가능하다.
+- daily_once: 하루 한 번만 발생한다.
+- cooldown: 발생 후 일정 슬롯 동안 재발생하지 않는다.
+- until_result: 특정 결과가 나올 때까지 반복 가능하다.
+
+repeat_policy 추가 항목
+- cooldown_slots: 재발생 금지 슬롯 수.
+- remove_after_draw: 추첨 직후 런타임 풀에서 제거할지 여부.
+- reset_at_day_change: 날짜 변경 시 일일 기록을 초기화할지 여부.
+
+주의
+- 원본 인카운터 Dictionary를 런타임 중 직접 수정하지 않는다.
+- ID의 분류 문자, category, repeat_policy가 서로 모순되면 오류로 처리한다.

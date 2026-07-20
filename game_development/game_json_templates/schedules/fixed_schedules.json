@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "data_type": "fixed_schedule",
+  "entries": [
+    {
+      "id": "SXXX_001",
+      "name": "아침 업무 보고",
+      "duration_slots": 1,
+      "delegate_allowed": true,
+      "required_skill": "administration",
+      "encounter_id": "IFBO_001",
+      "default_delegate_id": null,
+      "requirements": {},
+      "absence_effects": []
+    },
+    {
+      "id": "SXXX_002",
+      "name": "하루 업무 보고",
+      "duration_slots": 1,
+      "delegate_allowed": true,
+      "required_skill": "administration",
+      "encounter_id": "IFBO_002",
+      "default_delegate_id": null,
+      "requirements": {},
+      "absence_effects": []
+    }
+  ]
+}

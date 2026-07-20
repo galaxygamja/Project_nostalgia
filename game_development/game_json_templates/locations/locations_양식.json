@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "data_type": "location",
+  "entries": [
+    {
+      "id": "OXXX_001",
+      "name": "location_name",
+      "category": "location_category",
+      "description": "location_description",
+      "connected_location_ids": [],
+      "requirements": {},
+      "encounter_pool_ids": [],
+      "tags": []
+    }
+  ]
+}

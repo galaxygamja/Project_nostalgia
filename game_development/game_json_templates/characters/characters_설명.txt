@@ -1,0 +1,34 @@
+characters.json 설명
+
+목적
+- 책임자를 포함한 캐릭터의 원형, 기본 상태, 능력치를 정의한다.
+
+항목
+- id: 캐릭터 ID.
+- name: UI 표시 이름.
+- role: commander, specialist, npc 등 역할.
+- specialty: command, engineering, medical, exploration, research, administration 등 전문 분야.
+- default_state: 런타임 캐릭터 생성 시 깊은 복사할 상태.
+- alive: 생존 여부.
+- available: 업무 배정 가능 여부.
+- location_id: 현재 기본 위치 ID.
+- health: 신체 건강.
+- condition: 전반적인 컨디션.
+- fatigue: 피로. 높을수록 불리한 값.
+- stress: 스트레스. 높을수록 불리한 값.
+- trust: 책임자에 대한 신뢰.
+- awake_slots: 연속으로 깨어 있던 30분 슬롯 수.
+- judgement_reliability: 판단 및 보고 신뢰성.
+- injury_level: 부상 단계.
+- skills: 분야별 능력값.
+- trait_ids: 보유한 고정 특성 ID 목록.
+- starting_task_ids: 시작부터 담당할 업무 ID 목록.
+
+처리
+- 업무 배정 시 required_skill에 해당하는 skills 값을 사용한다.
+- fatigue, stress, injury_level은 업무 점수에 감점으로 사용할 수 있다.
+- trust와 전문 능력은 업무 점수 또는 보고 정확도에 반영할 수 있다.
+
+주의
+- 책임자와 일반 캐릭터는 같은 형식을 사용하고 role로 구분한다.
+- initial_game_state.json의 character_overrides가 default_state 위에 적용된다.

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "data_type": "facility",
+  "entries": [
+    {
+      "id": "FXXX_001",
+      "name": "facility_name",
+      "facility_type": "facility_type",
+      "default_state": {
+        "condition": 100.0,
+        "efficiency": 100.0,
+        "operational": true,
+        "level": 1
+      },
+      "produces": [
+        {
+          "resource_id": "RXXX_001",
+          "amount_per_slot": 0.0
+        }
+      ],
+      "consumes": [],
+      "related_task_ids": [],
+      "tags": []
+    }
+  ]
+}

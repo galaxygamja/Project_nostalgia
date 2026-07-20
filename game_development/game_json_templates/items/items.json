@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "data_type": "item",
+  "entries": [
+    {
+      "id": "MXXX_001",
+      "name": "발전실 출입 카드",
+      "category": "credential",
+      "stackable": false,
+      "maximum_stack": 1,
+      "consumable": false,
+      "requirements": {},
+      "passive_effects": [],
+      "use_effects": [],
+      "unlock_flags": [
+        "generator_access"
+      ]
+    }
+  ]
+}

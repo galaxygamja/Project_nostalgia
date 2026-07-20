@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "data_type": "encounter",
+  "entries": [
+    {
+      "id": "INGX_001",
+      "name": "encounter_name",
+      "category": "general",
+      "importance": "normal",
+      "repeat_policy": {
+        "type": "repeatable",
+        "cooldown_slots": 0,
+        "remove_after_draw": false,
+        "reset_at_day_change": false
+      },
+      "requirements": {},
+      "pages": [
+        {
+          "speaker_id": null,
+          "text": "encounter_text"
+        }
+      ],
+      "choices": [
+        {
+          "choice_id": "choice_01",
+          "text": "choice_text",
+          "requirements": {},
+          "effects": [],
+          "next_encounter_id": null
+        }
+      ],
+      "automatic_effects": []
+    }
+  ]
+}

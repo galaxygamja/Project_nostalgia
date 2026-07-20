@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "data_type": "initial_game_state",
+  "initial_state": {
+    "current_time": {
+      "day_index": 0,
+      "slot_index": 0
+    },
+    "commander_id": "CNCN_001",
+    "active_character_ids": [],
+    "resource_values": {},
+    "facility_states": {},
+    "character_overrides": {},
+    "initial_task_ids": [],
+    "active_pool_ids": [],
+    "inventory": {},
+    "clue_ids": [],
+    "deduction_ids": [],
+    "flags": {}
+  }
+}
