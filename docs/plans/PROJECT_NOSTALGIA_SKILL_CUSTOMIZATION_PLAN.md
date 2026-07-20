@@ -145,11 +145,17 @@
 
 ### 작업
 
-- [ ] 각 목표 스킬에 `name`, trigger description, required reads, outputs, stop conditions를 정의한다.
-- [ ] skill 간 trigger가 겹치지 않도록 routing matrix를 만든다.
+- [x] **배치 1:** `writing-plans` → `pn-authority-and-conflict-guard` 일대일 MIT 파생 작업본 작성
+- [x] **배치 1:** `systematic-debugging` → `pn-godot-debug-and-completion` 일대일 MIT 파생 작업본 작성
+- [x] **배치 1:** `verification-before-completion` → `pn-verification-gate` 일대일 MIT 파생 작업본 작성
+- [x] **배치 1:** `understand-diff` → `pn-repository-safety` 일대일 MIT 파생 작업본 작성
+- [x] 배치 1에서 upstream 병합을 사용하지 않고 source/license/hash provenance를 기록
+- [x] JSON 작성과 검증을 `pn-content-authoring` / `pn-data-core-guardian`으로 분리하기로 결정하고, 정확한 MIT/Apache upstream 부재로 독립 작성 후보에 보류
+- [x] 배치 1의 네 목표 스킬에 `name`, trigger description, required reads, outputs, stop conditions를 정의한다.
+- [ ] skill 간 trigger가 겹치지 않도록 전체 routing matrix를 만든다.
 - [ ] `skill-creator` 원본의 누락 파일에 의존하지 않는 최소 eval 구조를 정한다.
 - [ ] baseline은 “스킬 없음”이 아니라 현재 `AGENTS.md` + docs만 읽은 상태로 정의한다.
-- [ ] 각 eval에 수정 허용 경로와 금지 경로를 명시한다.
+- [x] 배치 1 각 결과물에 수정 허용 경로와 금지 경로를 명시한다.
 
 ### 최소 eval 형식안
 

@@ -78,7 +78,31 @@ Godot 4.7.1을 사용하더라도 다음은 바꾸지 않는다.
 
 `pn-authority-and-conflict-guard`는 엔진 API를 구현하지 않지만 버전 변경 승인 gate를 포함한다.
 
-## 8. 구현 전 차단 조건
+## 8. 배치 1 확정 upstream mapping
+
+2026-07-20 사용자 승인에 따라 첫 실제 개편 배치는 다음 네 개의 일대일 파생본으로 확정한다.
+
+| 직접 upstream | 결과물 | 라이선스 | 배치 1 조치 |
+|---|---|---|---|
+| `writing-plans` | `pn-authority-and-conflict-guard` | MIT | SSoT 상태·충돌·승인·변경 계획에 맞게 축소·개편 |
+| `systematic-debugging` | `pn-godot-debug-and-completion` | MIT | Godot 4.7.1 재현·근본 원인·단일 가설 절차로 축소·개편 |
+| `verification-before-completion` | `pn-verification-gate` | MIT | 정적/JSON/Godot/Git 증거를 분리하는 완료 관문으로 개편 |
+| `understand-diff` | `pn-repository-safety` | MIT | graph/dashboard 의존을 제거하고 branch/diff/staging/push 안전 절차로 개편 |
+
+배치 1에서는 원본을 병합하지 않는다. 각 결과물은 위 표의 하나의 upstream만 직접 사용하며, 다른 원본 스킬의 문구나 부속 파일을 복제하지 않는다. 책임이 다른 절차는 해당 project skill로 handoff한다.
+
+### JSON 스킬 분리 결정
+
+JSON 작성과 JSON 검증은 하나로 병합하지 않는다.
+
+- `pn-content-authoring`: 사람이 읽는 한국어 source를 canonical JSON으로 작성하는 독립 프로젝트 스킬 후보
+- `pn-data-core-guardian`: parse, envelope, ID, schema와 reference 무결성을 검증하는 독립 프로젝트 스킬 후보
+
+현재 조사된 source skills에는 두 책임에 의미상 정확히 대응하는 MIT/Apache-2.0 upstream이 없다. 따라서 두 결과물은 이번 기존 스킬 파생 배치에서 만들지 않고, 향후 canonical SSoT, JSON templates, `json_authoring_guidelines.json`과 실제 data core를 근거로 독립 작성할 후보로 보류한다. `skill-creator`는 JSON domain upstream으로 사용하지 않는다.
+
+`pn-repository-safety`는 배치 1의 Git·저장소 안전 결과물 이름으로 확정한다. 기존 조건부 `pn-repository-map`은 구조 map/query/impact 후보로 별도 보류하며 두 책임을 자동 병합하지 않는다.
+
+## 9. 구현 전 차단 조건
 
 - Godot 4.7.1-stable binary가 없으면 runtime-specific example을 “검증 완료”로 표시하지 않는다.
 - 과거 Drive 산출물은 로컬 반입·hash manifest 전 사용하지 않는다.
