@@ -2,9 +2,12 @@
 
 - 조사일: 2026-07-20
 - Drive 위치: `https://drive.google.com/drive/folders/1J_2ScCy51xlmiU2O3JF_wwZ3synjHbUM?usp=drive_link`
-- 조사 방식: 비인증 공개 listing에 대한 읽기 전용 확인
+- 조사 방식: 비인증 공개 listing에 대한 읽기 전용 확인 및 로컬 반입본 정적 감사
+- 로컬 반입 확인일: `2026-07-20`
+- 로컬 반입 위치: `game_development/`
 - 원본 변경·이동·삭제: 없음
-- 저장소 자동 반입·병합: 없음
+- 저장소 자동 병합: 없음
+- 상세 호환성 보고서: `docs/reports/UNFINISHED_GODOT_PROJECT_COMPATIBILITY_AUDIT.md`
 
 ## 1. 접근 가능 여부
 
@@ -19,7 +22,19 @@
 
 그러나 현재 연결 도구에서는 하위 폴더의 child ID/direct link를 얻거나 `godot_data_core` 내부를 재귀 열람할 수 없었다. 인증을 우회하거나 다른 수단으로 강제 접근하지 않았다.
 
-따라서 감사 상태는 **부분 접근 가능 / 상세 조사는 로컬 반입 필요**다.
+따라서 최초 Drive 감사 상태는 **부분 접근 가능 / 상세 조사는 로컬 반입 필요**였다.
+
+## 1.1 로컬 반입 후 상태
+
+사용자가 `game_development/`에 Drive 산출물을 반입한 뒤 저장소 전체에서 `project.godot`을 다시 검색했다.
+
+- 발견 위치: `game_development/godot_data_core/project.godot`
+- 프로젝트 후보 수: 1
+- 판정된 프로젝트 루트: `game_development/godot_data_core/`
+- 형제 자료: `game_development/game_json_templates/`, `game_development/json_authoring_guidelines.json`
+- 최초 권장 위치였던 `external_sources/unfinished_godot_project/`: 존재하지 않음
+
+로컬 반입 차단은 해제되었다. 구조, 설정 및 JSON 정적 검사는 완료했지만 정확한 Godot 4.7.1-stable binary가 없어 parser/runtime 호환성 검증은 계속 차단되어 있다. 상세 결과는 `UNFINISHED_GODOT_PROJECT_COMPATIBILITY_AUDIT.md`를 따른다.
 
 ## 2. 발견한 프로젝트 후보
 
@@ -211,9 +226,14 @@ external_sources/unfinished_godot_project/
 ## 15. 결론
 
 - Drive 직접 하위 listing: 접근 성공
-- Godot 후보: `godot_data_core`
-- 후보 내부 상세 접근: 불가
-- `project.godot` 직접 확인: 불가
-- 과거 산출물 Godot 버전: 확인 불가
+- 로컬 반입: `game_development/`에서 확인
+- Godot 프로젝트 루트: `game_development/godot_data_core/`
+- `project.godot`: 1개 직접 확인
+- 프로젝트 설정 근거: `config_version=5`, feature `4.7`, main scene `res://main.tscn`, GL compatibility
+- 과거 산출물의 목표 표기: README에서 Godot 4.7.1 확인
+- 실제 JSON: 20개 parse 성공, ID 28개, 중복/형식 위반 0개
+- Godot 4.7.1 parser/runtime 검증: 정확한 binary 부재로 미실행
 - 공식 미래 기준: Godot 4.7.1-stable
-- 현재 차단: **로컬 반입 필요**
+- 현재 차단: **정확한 Godot 4.7.1-stable binary 및 headless/runtime 검증**
+
+최초의 “로컬 반입 필요” 차단은 해제되었다. 원본은 수정하지 않았으며 선택적 이관·수정·병합은 별도 승인 대상이다.
