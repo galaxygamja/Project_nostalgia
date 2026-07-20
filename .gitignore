@@ -1,0 +1,8 @@
+.godot/
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Preserve the imported handoff bundle locally without staging duplicate files.
+/Project_Nostalgia_Codex_Handoff_v0.1/
