@@ -63,11 +63,11 @@
 
 | # | 스킬 | 원본 경로 | 원본 프로젝트/출처 | LICENSE | 종류 | 수정 | 재배포 | 고지 유지 조건 | 공개 GitHub 포함 | PN 수정본 | 확인 불가능/주의 |
 |---:|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | `algorithmic-art` | `algorithmic-art/SKILL.md` | 로컬 출처명 미기록; Anthropic 계열로 보이는 문구만으로는 출처 확정 안 함 | `algorithmic-art/LICENSE.txt` | Apache-2.0 | 허용 | 허용 | license, 기존 관련 고지, 변경 표시, NOTICE 존재 시 반영 | 조건부 가능 | 가능 | 구체 copyright owner와 upstream URL 불명 |
+| 1 | `algorithmic-art` | `algorithmic-art/SKILL.md` | Anthropic, PBC.; upstream URL 미기록 | `algorithmic-art/LICENSE.txt` | Apache-2.0 | 허용 | 허용 | license, 기존 관련 고지, 변경 표시, NOTICE 존재 시 반영 | 조건부 가능 | 가능 | LICENSE에 Copyright 2026 Anthropic, PBC. 확인 |
 | 2 | `baoyu-article-illustrator` | `baoyu-article-illustrator/SKILL.md` | Jim Liu, `github.com/JimLiu/baoyu-skills` | `baoyu-skills__LICENSE.txt` | MIT | 허용 | 허용 | Jim Liu copyright + MIT permission notice | 가능 | 가능 | image backend별 별도 라이선스는 본 감사 밖 |
 | 3 | `baoyu-diagram` | `baoyu-diagram/SKILL.md` | baoyu-skills; 동일 bundle naming, SKILL에 직접 homepage 없음 | `baoyu-skills__LICENSE.txt` | MIT | 허용 | 허용 | Jim Liu copyright + MIT permission notice | 가능 | 가능 | 정확한 upstream subpath는 로컬에서 직접 확인 안 됨 |
 | 4 | `humanizer` | `blader_humanizer/SKILL.md` | Siqi Chen; folder label `blader_humanizer` | `blader_humanizer__LICENSE.txt` | MIT | 허용 | 허용 | Siqi Chen copyright + MIT permission notice | 가능 | 가능 | upstream URL 없음 |
-| 5 | `canvas-design` | `canvas-design/SKILL.md` | 로컬 출처명/URL 미기록 | `canvas-design/LICENSE.txt` | Apache-2.0 | 허용 | 허용 | Apache 조건, 변경 표시, 관련 고지/NOTICE | 조건부 가능 | 가능 | 구체 copyright owner/upstream URL 불명; `canvas-fonts` 누락 |
+| 5 | `canvas-design` | `canvas-design/SKILL.md` | Anthropic, PBC.; upstream URL 미기록 | `canvas-design/LICENSE.txt` | Apache-2.0 | 허용 | 허용 | Apache 조건, 변경 표시, 관련 고지/NOTICE | 조건부 가능 | 가능 | LICENSE에 Copyright 2026 Anthropic, PBC. 확인; `canvas-fonts` 누락 |
 | 6 | `frontend-design` | `frontend-design/SKILL.md` | 로컬 출처명/URL 미기록 | `frontend-design/LICENSE.txt` | Apache-2.0 | 허용 | 허용 | Apache 조건, 변경 표시, 관련 고지/NOTICE | 조건부 가능 | 가능 | 구체 copyright owner/upstream URL 불명 |
 | 7 | `godot-resource-data-patterns` | `Godot Resource Data Patterns/SKILL.md` | bundle label `GD-Agentic-Skills`; upstream URL 미기록 | `GD-Agentic-Skills__LICENSE.txt` | LGPL-3.0 | 허용 | 조건부 허용 | LGPL/GPL 고지, license, modified source/corresponding source 및 결합 조건 | 조건 준수 시 가능 | 조건부 가능 | copyright holder와 정확한 upstream URL 불명; 결합 방식 법률 검토 필요 |
 | 8 | `dialogue-system` | `godot-dialogue-system-1.0.0/SKILL.md` | metadata `mcpmarket-version: 1.0.0`; 정확한 package/source URL 없음 | 없음 | 확인 불가 | 보류 | 보류 | 확인 불가 | **보류** | **보류** | 라이선스와 권리자 모두 확인 불가 |
@@ -76,7 +76,7 @@
 | 11 | `godot-state-machine-advanced` | `godot-state-machine-advanced/SKILL.md` | `GD-Agentic-Skills` bundle | `GD-Agentic-Skills__LICENSE.txt` | LGPL-3.0 | 허용 | 조건부 허용 | LGPL/GPL 조건과 source 제공 | 조건 준수 시 가능 | 조건부 가능 | 정확한 upstream/권리자 불명 |
 | 12 | `godot-ui-rich-text` | `godot-ui-rich-text/SKILL.md` | `GD-Agentic-Skills` bundle | `GD-Agentic-Skills__LICENSE.txt` | LGPL-3.0 | 허용 | 조건부 허용 | LGPL/GPL 조건과 source 제공 | 조건 준수 시 가능 | 조건부 가능 | 정확한 upstream/권리자 불명 |
 | 13 | `requesting-code-review` | `requesting-code-review/SKILL.md` | obra/superpowers, Jesse Vincent | `obra_superpowers__LICENSE.txt` | MIT | 허용 | 허용 | Jesse Vincent copyright + MIT notice | 가능 | 가능 | upstream URL은 로컬 라이선스에 없음 |
-| 14 | `skill-creator` | `skill-creator/SKILL.md` | 로컬 출처명/URL 미기록 | `skill-creator/LICENSE.txt` | Apache-2.0 | 허용 | 허용 | Apache 조건, 변경 표시, 관련 고지/NOTICE | 조건부 가능 | 가능 | 구체 copyright owner/upstream URL 불명; 필수 eval resources 누락 |
+| 14 | `skill-creator` | `skill-creator/SKILL.md` | Anthropic, PBC.; upstream URL 미기록 | `skill-creator/LICENSE.txt` | Apache-2.0 | 허용 | 허용 | Apache 조건, 변경 표시, 관련 고지/NOTICE | 조건부 가능 | 가능 | LICENSE에 Copyright 2026 Anthropic, PBC. 확인; frontmatter license 필드와 필수 eval resources 누락 |
 | 15 | `systematic-debugging` | `systematic-debugging/SKILL.md` | obra/superpowers, Jesse Vincent | `obra_superpowers__LICENSE.txt` | MIT | 허용 | 허용 | Jesse Vincent copyright + MIT notice | 가능 | 가능 | upstream URL은 로컬 라이선스에 없음 |
 | 16 | `test-driven-development` | `test-driven-development/SKILL.md` | obra/superpowers, Jesse Vincent | `obra_superpowers__LICENSE.txt` | MIT | 허용 | 허용 | Jesse Vincent copyright + MIT notice | 가능 | 가능 | upstream URL은 로컬 라이선스에 없음 |
 | 17 | `understand` | `.../skills/understand/SKILL.md` | Egonex-AI/Understand-Anything; Yuxiang Lin, Infinite Universe, Inc. | 상위 `Understand-Anything/LICENSE` | MIT | 허용 | 허용 | 두 copyright notice + MIT notice | 가능 | 가능 | 상위 monorepo license 적용; third-party package license는 별도 유지 필요 |
@@ -164,3 +164,17 @@ Project Nostalgia의 6개 목표 스킬은 여러 upstream을 병합한다. lice
 5. 실제 Godot 버전 확인
 
 source_skills 원본은 수정하지 않았다.
+
+## 8. 2026-07-21 재감사 갱신
+
+이 문서의 초기 “공개 포함 가능 25개/PN 수정본 가능 25개”는 라이선스 본문 분포와 당시 가능성 평가다. 현재 작업 판정은 `SKILL_LICENSE_REAUDIT.md`가 대체한다.
+
+- 최종 source 수: 27
+- `VERIFIED_DIRECT`: 12
+- `VERIFIED_BY_EXPLICIT_BUNDLE_SCOPE`: 9
+- `LICENSE_UNKNOWN`: 2
+- 이번 Goal 정책상 `EXCLUDED`: LGPL 파일 동봉 Godot 4개
+- Phase B eligible: `test-driven-development`, `understand`, `frontend-design`
+- unknown source와 LGPL source의 원문·scripts·references는 이번 Goal 결과물에 사용하지 않는다.
+
+현재 attribution 구조는 `licenses/`, `THIRD_PARTY_NOTICES.md`, 각 `SOURCE_AND_LICENSE.md`다. 과거 제안 구조보다 실제 저장소 구조를 우선한다.

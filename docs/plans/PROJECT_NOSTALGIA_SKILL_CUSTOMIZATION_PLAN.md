@@ -1,13 +1,15 @@
 # Project Nostalgia 스킬 커스터마이징 계획
 
 - 작성일: 2026-07-20
-- 상태: 계획안 — 구현 승인 전
+- 상태: 진행 중 — Phase A 완료, Phase L 라이선스 재감사 완료
 - 근거 보고서: `docs/reports/SKILL_INVENTORY.md`
 - 원본 위치: `Project_Nostalgia_Codex_Handoff_v0.1/source_skills/Project_nostalgia_Skills_v0.6/`
 
 ## 목표
 
 27개 범용 원본 스킬을 그대로 설치하지 않고, Project Nostalgia의 SSoT·canonical JSON data core·Godot 작업 흐름·문서형 한국어 UI에 맞는 작고 검증 가능한 프로젝트 전용 스킬 묶음으로 재구성한다.
+
+> 2026-07-21 현재 상태: Phase A 기반 스킬 4개 평가와 원격 checkpoint가 완료됐다. Phase L에서 source skill 27개를 재감사했으며 최종 기존 스킬 배치 eligibility는 `test-driven-development`, `understand`, `frontend-design` 세 후보다. 아래 초기 세션 경계와 과거 상태 설명은 계획 수립 당시의 역사적 기록이며 현재 상태는 이 갱신과 이후 Phase 기록이 우선한다.
 
 ## 이번 세션의 경계
 
@@ -138,6 +140,16 @@
 ### Phase 0 판정
 
 **정책·문서 기준 통과.** 저장소 정규화·GitHub 이관, 27개 스킬 라이선스 분류, 공식 Godot 4.7.1-stable 기준 확정이 완료되었다. 실제 실행 환경 검증은 binary 부재로 미완료이며, 미완성 Drive 산출물은 내부 파일 접근이 제한되어 로컬 반입이 필요하다. 라이선스 불명인 `dialogue-system`과 `godot-master`는 사용·수정·공개 재배포에서 제외한다. 스킬 커스터마이징은 별도 승인 전 시작하지 않는다.
+
+### Phase L 재감사 갱신 — 2026-07-21
+
+- source skill 27개 누락·중복 없이 재확인
+- 분류: `VERIFIED_DIRECT` 12, `VERIFIED_BY_EXPLICIT_BUNDLE_SCOPE` 9, `LICENSE_UNKNOWN` 2, 이번 Goal 정책상 `EXCLUDED` 4
+- 라이선스 본문 분포: MIT 17, Apache-2.0 4, LGPL 파일 동봉 4, 없음 2
+- 기존 오류 정정: `algorithmic-art`, `canvas-design`, `skill-creator`의 LICENSE에서 Copyright 2026 Anthropic, PBC. 확인
+- Phase B eligible: `test-driven-development` → `pn-simulation-tdd`, `understand` → `pn-repository-map`, `frontend-design` → `pn-narrative-ui-director`
+- `pn-save-migration`은 LGPL 직접 파생 금지로 이번 Goal에서 생성하지 않음
+- 근거: `docs/reports/SKILL_LICENSE_REAUDIT.md`, `docs/plans/SKILL_BATCH_2_LICENSE_ELIGIBILITY.md`
 
 ## Phase 1 — 스킬 계약과 eval 체계 설계
 
