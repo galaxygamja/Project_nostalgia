@@ -11,6 +11,8 @@
 
 > 2026-07-21 현재 상태: Phase A 기반 스킬 4개 평가와 원격 checkpoint가 완료됐다. Phase L에서 source skill 27개를 재감사했으며 최종 기존 스킬 배치 eligibility는 `test-driven-development`, `understand`, `frontend-design` 세 후보다. 아래 초기 세션 경계와 과거 상태 설명은 계획 수립 당시의 역사적 기록이며 현재 상태는 이 갱신과 이후 Phase 기록이 우선한다.
 
+> 최종 기존 스킬 배치 결정: 위 세 eligible upstream을 각각 `pn-simulation-tdd`, `pn-repository-map`, `pn-narrative-ui-director`로 일대일 개편했다. `pn-save-migration`과 독립 JSON 스킬은 생성하지 않았다.
+
 ## 이번 세션의 경계
 
 이번 세션에서는 이 계획만 작성한다.

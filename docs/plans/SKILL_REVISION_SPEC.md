@@ -1,7 +1,7 @@
 # Project Nostalgia 스킬 개편 명세
 
 - 작성일: 2026-07-20
-- 상태: 구현 전 기준 명세
+- 상태: 구현 기준 명세 — 기반 배치와 최종 기존 스킬 배치 반영
 - 공식 Godot 기준: **Godot 4.7.1-stable**
 - 근거: canonical SSoT Section 27 및 2026-07-20 사용자 승인
 
@@ -59,9 +59,9 @@ Godot 4.7.1을 사용하더라도 다음은 바꾸지 않는다.
 
 ## 6. 원본 스킬 라이선스 경계
 
-- MIT/Apache/LGPL 재료는 `SKILL_LICENSE_AUDIT.md`의 조건과 attribution을 따른다.
+- MIT/Apache 재료는 `SKILL_LICENSE_REAUDIT.md`의 최종 scope 분류와 attribution을 따른다.
 - license 불명인 `dialogue-system`, `godot-master`의 원문·script·reference를 수정본에 사용하지 않는다.
-- LGPL 원본을 직접 복사·변형할 경우 corresponding source와 license 조건을 적용한다.
+- 이번 최종 기존 스킬 배치에서는 LGPL 원본을 직접 복사·변형하지 않는다.
 - 가능하면 Project Nostalgia 요구사항을 기준으로 독립 재작성하고 provenance를 기록한다.
 
 ## 7. 대상 스킬별 4.7.1 적용
@@ -107,4 +107,14 @@ JSON 작성과 JSON 검증은 하나로 병합하지 않는다.
 - Godot 4.7.1-stable binary가 없으면 runtime-specific example을 “검증 완료”로 표시하지 않는다.
 - 과거 Drive 산출물은 로컬 반입·hash manifest 전 사용하지 않는다.
 - license 불명 source를 사용하지 않는다.
-- 실제 스킬 파일 작성은 별도 사용자 승인 후 시작한다.
+- 새 독립 스킬 또는 추가 batch는 별도 사용자 승인 후 시작한다. 승인된 기반/최종 기존 스킬 배치는 작성 완료 상태다.
+
+## 10. 최종 기존 스킬 배치 mapping
+
+| 직접 upstream | 결과물 | license | 조치 |
+|---|---|---|---|
+| `test-driven-development` | `pn-simulation-tdd` | MIT | simulation 고위험 동작에 test-first 절차 적용 |
+| `understand` | `pn-repository-map` | MIT | graph/dashboard 의존을 제거한 read-only direct map |
+| `frontend-design` | `pn-narrative-ui-director` | Apache-2.0 | deliberate design을 PN Godot narrative UI로 개편 |
+
+`pn-save-migration`은 이번 Goal의 LGPL 직접 파생 금지로 생성하지 않았다. 세 결과물은 upstream을 병합하지 않는다.

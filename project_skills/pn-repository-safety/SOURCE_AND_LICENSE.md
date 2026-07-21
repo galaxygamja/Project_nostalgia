@@ -40,4 +40,4 @@ Copyright (c) 2026 Yuxiang Lin
 
 Copyright (c) 2026 Infinite Universe, Inc.
 
-MIT permission notice 전체는 `licenses/understand-anything/LICENSE`와 저장소 루트 `THIRD_PARTY_NOTICES.md`에 보존한다.
+MIT permission notice 전문은 `licenses/understand-anything/LICENSE`에 있고, attribution과 해당 경로는 저장소 루트 `THIRD_PARTY_NOTICES.md`에 기록한다.
