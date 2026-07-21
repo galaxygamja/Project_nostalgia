@@ -1,6 +1,6 @@
 ---
 name: pn-godot-debug-and-completion
-description: Use when Project Nostalgia has a Godot, GDScript, scene/resource, data bootstrap, test, or unexpected runtime problem; investigates root cause under Godot 4.7.1 before any fix.
+description: Use when Project Nostalgia shows a Godot 4.7.1 GDScript parser, project-load, scene/resource, data-bootstrap, test, or runtime failure or unexpected behavior; reproduces and isolates root cause and defines the minimum fix and required rechecks, but does not perform general Godot Q&A or final completion approval.
 ---
 
 # Project Nostalgia Godot Debugging and Completion Preparation
@@ -18,10 +18,11 @@ description: Use when Project Nostalgia has a Godot, GDScript, scene/resource, d
 - test 실패, bootstrap 실패, missing resource/reference
 - 예상과 다른 game loop·시간·schedule 동작
 - 정적 audit 결과와 실제 Godot 결과가 다를 때
-- 미완성 `game_development/godot_data_core/`와 canonical 설계의 차이를 조사할 때
+- 미완성 `game_development/godot_data_core/`와 canonical 설계의 차이가 실제 실패 또는 예상 밖 동작의 원인 후보일 때
 
 ## 호출하지 말아야 하는 조건
 
+- Godot API나 문서에 관한 일반 질문처럼 프로젝트 오류·예상 밖 동작이 없는 요청
 - 새 설정이나 `[미정]` 설계 선택: `pn-authority-and-conflict-guard`로 넘긴다.
 - 오류 없이 새 기능을 구현하는 작업
 - 완료 증거만 확인하는 작업: `pn-verification-gate`
@@ -100,10 +101,10 @@ GameJsonLoader
 - `game_loop_v1`과 canonical repository가 연결되지 않음
 - 900×540과 canonical 1920×1080
 - 연속 수치형 skills와 단계제 기술
-- 100일 runtime 기본값과 1000일 시스템 지원 상한
+- 100일 runtime 기본값과 현재 반입 data contract의 1000일 기술 지원 상한
 - IFBO 계열 의미와 missing references
 
-1000일은 예상 엔딩 시점이 아니라 지원 상한이다. 100일과의 차이는 엔딩 기간 충돌로 고치지 말고 config 전달/기본값 문제 후보로 조사한다.
+1000일은 예상 엔딩 시점이나 최종 게임 기간이 아니며 최종 총 일수는 SSoT에서 `[미정]`이다. 현재 반입 data contract가 1000일 기술 지원 상한을 사용하므로, 100일과의 차이는 엔딩 기간 충돌로 고치지 말고 config 전달/runtime 기본값 문제 후보로 조사한다. 상한 자체를 영구 canonical 요구사항으로 바꾸지는 않는다.
 
 ### 5. 단일 가설 검증
 
@@ -130,6 +131,8 @@ GameJsonLoader
 
 ## 수정 가능한 범위
 
+근본 원인이 확인된 뒤 **별도로 승인된 구현 단계에서 이 스킬이 검증된 최소 수정을 적용하는 경우에만** 다음 범위를 수정한다.
+
 - 사용자 승인으로 지정된 격리 작업본의 Godot 코드·scene/resource·test
 - 승인된 diagnostic instrumentation
 - task-specific debug report
@@ -147,7 +150,7 @@ GameJsonLoader
 
 ## 중단 조건
 
-- 정확한 재현이나 오류 원문을 확보할 수 없음
+- 정확한 재현이나 오류 원문을 확보할 수 없음: 재현 불가 상태와 추가로 필요한 로그·환경 증거를 보고하고 수정 추측을 중단
 - 필요한 Godot 4.7.1 binary가 없음: runtime 계층만 중단하고 정적 조사 범위를 명시
 - 수정하려면 `[미정]` 또는 known conflict를 선택해야 함
 - 원본 snapshot을 변환해야만 조사 가능함
@@ -185,7 +188,7 @@ SSoT/schema/ID 영향:
 
 ## 다음 스킬로 넘기는 조건
 
-- 충돌 또는 설정 승인 필요 → `pn-authority-and-conflict-guard`
-- 수정·검증 작업의 완료 판정 → `pn-verification-gate`
+- 충돌 또는 설정 승인 필요 → `pn-authority-and-conflict-guard`. 반환 이유, 영향 규칙, 필요한 사용자 결정과 재조사 조건을 함께 기록한다.
+- 수정·검증 작업의 완료 판정 → `pn-verification-gate`. 실패로 되돌아오면 실패 명령, 최초 실패 경계와 추가 증거를 새 가설의 입력으로 사용하며 같은 검증을 반복 호출하지 않는다.
 - diff/staging/commit/push → `pn-repository-safety`
 - JSON authoring/schema migration 자체 → 배치 1 범위 밖이므로 보류

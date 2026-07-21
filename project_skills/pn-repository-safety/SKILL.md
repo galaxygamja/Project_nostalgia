@@ -1,6 +1,6 @@
 ---
 name: pn-repository-safety
-description: Use before and during Git work in Project Nostalgia to verify branch, baseline, diff, selective staging, commit, and push without including untracked sources, secrets, caches, or unrelated files.
+description: Use for Project Nostalgia Git state and recording operations—baseline/branch/upstream checks, working versus staged diff, selective staging, commit, non-force push, and local/remote SHA confirmation—while excluding secrets, caches, protected sources, and unrelated files; not for semantic code review or general repository exploration.
 ---
 
 # Project Nostalgia Repository Safety
@@ -22,6 +22,8 @@ description: Use before and during Git work in Project Nostalgia to verify branc
 
 ## 호출하지 말아야 하는 조건
 
+- 단순 파일 탐색, 저장소 구조 설명 또는 코드 의미·품질 리뷰
+- Git 기록이 없는 일반 문서·코드 작성
 - 게임 코드·JSON·문서 내용을 설계하거나 작성할 때
 - SSoT 충돌 판단: `pn-authority-and-conflict-guard`
 - Godot 오류의 원인 조사: `pn-godot-debug-and-completion`
@@ -177,7 +179,7 @@ push target/result/remote SHA:
 
 ## 다음 스킬로 넘기는 조건
 
-- 설정/SSoT 충돌 발견 → `pn-authority-and-conflict-guard`
-- Godot/test/data failure 원인 조사 → `pn-godot-debug-and-completion`
-- commit 전 전체 요구사항·증거 판정 → `pn-verification-gate`
+- 설정/SSoT 충돌 발견 → `pn-authority-and-conflict-guard`. 충돌 항목과 변경 후보만 전달하고 승인 범위가 확인될 때까지 Git 기록을 중단한다.
+- Godot/test/data failure 원인 조사 → `pn-godot-debug-and-completion`. 실패 증거와 관련 diff를 전달한다.
+- staging 전에 기능적 완료 판정이 필요함 → `pn-verification-gate`. `완료` 또는 승인된 `부분 완료` 판정 후 이 스킬로 돌아와 Git 기록을 수행하며, Git 작업이 기능 파일을 바꾸지 않았다면 verification으로 순환하지 않는다.
 - 콘텐츠나 코드 작성 → task에 맞는 별도 스킬 또는 승인된 구현 절차

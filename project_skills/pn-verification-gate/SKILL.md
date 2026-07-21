@@ -1,6 +1,6 @@
 ---
 name: pn-verification-gate
-description: Use immediately before claiming, committing, or reporting any Project Nostalgia work as complete, fixed, passing, or ready; requires fresh evidence and separates static, Godot, data, and Git verification.
+description: Use at the functional evidence gate immediately before declaring Project Nostalgia work complete, fixed, passing, compatible, or ready for Git recording; maps requirements to fresh static/data/Godot evidence and returns complete, partial, or blocked, but does not diagnose failures or execute staging, commit, push, or general review.
 ---
 
 # Project Nostalgia Verification Gate
@@ -9,18 +9,20 @@ description: Use immediately before claiming, committing, or reporting any Proje
 
 `verification-before-completion`의 핵심인 **주장 전에 신선한 증거를 확인한다**는 원칙을 Project Nostalgia의 검증 계층과 결과 상태에 적용한다.
 
-완료를 암시하는 표현, commit 또는 다음 작업으로 이동하기 전에 이 gate를 통과한다. 다른 project skill도 이 결과 형식을 따르거나 이 스킬로 넘긴다.
+완료를 암시하는 표현 또는 기능 변경을 Git에 기록하기 전에 이 gate를 통과한다. 다른 project skill도 이 결과 형식을 따르거나 이 스킬로 넘긴다. 검증이 통과한 뒤 staging/commit/push는 `pn-repository-safety`가 담당하며, Git 작업 자체가 최종 주장에 포함되면 repository 결과를 별도 증거로 보고한다.
 
 ## 호출 조건
 
 - `완료`, `수정됨`, `통과`, `준비됨`, `호환됨`을 주장하기 직전
-- commit/push 또는 task 종료 직전
+- 기능 변경을 staging/commit 대상으로 승인하기 직전
 - Godot/JSON/Git 작업 결과를 최종 보고하기 전
 - agent·도구·과거 report가 성공했다고 했지만 직접 확인하지 않았을 때
 - 부분 검사로 전체 성공을 추론하려 할 때
 
 ## 호출하지 말아야 하는 조건
 
+- 단순 Git status, diff 목록, staging 또는 push 안전 확인: `pn-repository-safety`
+- 의미·품질에 대한 일반 코드 리뷰나 원인 조사
 - 오류의 근본 원인을 조사하는 중: `pn-godot-debug-and-completion`
 - authority 충돌과 승인 계획 수립: `pn-authority-and-conflict-guard`
 - Git 명령을 안전하게 실행하는 절차 자체: `pn-repository-safety`
@@ -42,7 +44,7 @@ description: Use immediately before claiming, committing, or reporting any Proje
 
 1. **주장 식별:** 무엇이 완료되었다고 말하려는가?
 2. **증거 정의:** 그 주장을 직접 입증하는 전체 명령·검사는 무엇인가?
-3. **신선하게 실행:** 현재 작업 상태에서 전체 검사를 실행한다.
+3. **신선하게 실행:** 현재 작업 상태에서 전체 검사를 실행한다. 기능 증거는 관련 파일이 바뀌면 stale이므로 다시 실행한다.
 4. **출력 판독:** exit code, 전체 오류, failure count, skipped 항목을 확인한다.
 5. **범위 대조:** 증거가 주장 전체를 직접 입증하는가?
 6. **상태 판정:** 완료 / 부분 완료 / 차단됨 중 하나로 기록한다.
@@ -182,7 +184,7 @@ working diff/staged diff:
 
 ## 다음 스킬로 넘기는 조건
 
-- 실패의 root cause 조사 → `pn-godot-debug-and-completion`
-- 충돌·authority 승인 필요 → `pn-authority-and-conflict-guard`
-- 안전한 stage/commit/push 실행 → `pn-repository-safety`
+- 실패의 root cause 조사 → `pn-godot-debug-and-completion`. 실패 명령, 최초 실패 지점, 추가로 필요한 증거와 다시 verification으로 돌아오는 조건을 전달한다.
+- 충돌·authority 승인 필요 → `pn-authority-and-conflict-guard`. 충돌 항목과 승인 범위를 전달하며 새 승인 또는 기준 SHA가 확인될 때만 돌아온다.
+- 기능 검증 통과 후 안전한 stage/commit/push 실행 → `pn-repository-safety`. repository 작업 뒤 Git 기록·remote 상태는 repository 증거로 최종 보고하고, 기능 파일이 바뀐 경우에만 이 gate를 다시 실행한다.
 - JSON domain 수정 → 담당 스킬이 아직 없으므로 보류하고 별도 승인 요청

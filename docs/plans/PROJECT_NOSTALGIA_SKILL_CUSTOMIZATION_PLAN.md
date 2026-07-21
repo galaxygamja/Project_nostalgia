@@ -152,9 +152,9 @@
 - [x] 배치 1에서 upstream 병합을 사용하지 않고 source/license/hash provenance를 기록
 - [x] JSON 작성과 검증을 `pn-content-authoring` / `pn-data-core-guardian`으로 분리하기로 결정하고, 정확한 MIT/Apache upstream 부재로 독립 작성 후보에 보류
 - [x] 배치 1의 네 목표 스킬에 `name`, trigger description, required reads, outputs, stop conditions를 정의한다.
-- [ ] skill 간 trigger가 겹치지 않도록 전체 routing matrix를 만든다.
-- [ ] `skill-creator` 원본의 누락 파일에 의존하지 않는 최소 eval 구조를 정한다.
-- [ ] baseline은 “스킬 없음”이 아니라 현재 `AGENTS.md` + docs만 읽은 상태로 정의한다.
+- [x] skill 간 trigger가 겹치지 않도록 배치 1 전체 routing matrix를 만들고 89개 정적 시나리오로 검토했다.
+- [x] `skill-creator` 원본의 누락 파일에 의존하지 않는 표준 라이브러리 기반 최소 eval 구조와 validator를 작성했다.
+- [x] baseline은 “스킬 없음”이 아니라 현재 `AGENTS.md` + docs만 읽은 상태로 정의했다. 실제 baseline 비교 실행은 local pilot로 보류한다.
 - [x] 배치 1 각 결과물에 수정 허용 경로와 금지 경로를 명시한다.
 
 ### 최소 eval 형식안
@@ -180,6 +180,16 @@
 - 모든 스킬에 source mutation 방지 사례 1개 이상
 - authority/data/UI/runtime claim 관련 cross-skill 사례 포함
 - eval runner가 원본 스킬을 수정하지 않는지 path allowlist로 확인
+
+### Phase 1 배치 1 평가 결과
+
+- 평가 자료: `project_skills/evals/foundational-batch-1/`
+- 시나리오: 89개
+- 정적 판정: PASS 89 / AMBIGUOUS 0 / FAIL 0
+- runtime trigger: 89개 모두 `NOT_RUNTIME_TESTED`
+- 직접 upstream 네 개: 실제 동봉 MIT LICENSE, 저작권, 적용 범위와 직접 파생 허용 여부 재검증 완료
+- 결과 보고서: `docs/reports/SKILL_FOUNDATIONAL_EVAL_REPORT.md`
+- Phase B: 남은 후보 전체 라이선스 재감사 완료 전 시작하지 않음
 
 ## Phase 2 — `pn-authority-and-conflict-guard`
 
