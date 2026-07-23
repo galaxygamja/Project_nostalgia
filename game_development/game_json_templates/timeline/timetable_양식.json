@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "data_type": "timetable",
+  "max_days": 1000,
+  "slots_per_day": 48,
+  "days": [
+    {
+      "day_index": 0,
+      "slots": {
+        "0": {
+          "fixed_schedule_ids": [],
+          "scheduled_encounter_ids": [],
+          "task_completion_ids": []
+        }
+      }
+    }
+  ],
+  "repeating_schedules": [
+    {
+      "schedule_id": "SXXX_001",
+      "start_day_index": 0,
+      "end_day_index": 999,
+      "slot_index": 0,
+      "interval_days": 1
+    }
+  ]
+}

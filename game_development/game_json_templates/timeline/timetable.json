@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "data_type": "timetable",
+  "max_days": 1000,
+  "slots_per_day": 48,
+  "days": [
+    {
+      "day_index": 19,
+      "slots": {
+        "28": {
+          "fixed_schedule_ids": [],
+          "scheduled_encounter_ids": [
+            "ISBO_020"
+          ],
+          "task_completion_ids": []
+        }
+      }
+    }
+  ],
+  "repeating_schedules": [
+    {
+      "schedule_id": "SXXX_001",
+      "start_day_index": 0,
+      "end_day_index": 999,
+      "slot_index": 12,
+      "interval_days": 1
+    },
+    {
+      "schedule_id": "SXXX_002",
+      "start_day_index": 0,
+      "end_day_index": 999,
+      "slot_index": 44,
+      "interval_days": 1
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "data_type": "clue",
+  "entries": [
+    {
+      "id": "LXXX_001",
+      "name": "clue_name",
+      "description": "clue_description",
+      "source_encounter_ids": [],
+      "tags": []
+    }
+  ]
+}

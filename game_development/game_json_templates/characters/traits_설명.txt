@@ -1,0 +1,26 @@
+traits.json 설명
+
+목적
+- 완벽주의, 낙관적, 겁이 많음 등 캐릭터의 비교적 고정적인 성향을 정의한다.
+
+항목
+- id: 특성 ID.
+- name: 표시 이름.
+- description: 인간 개발자와 UI를 위한 설명.
+- requirements: 특성이 활성화되기 위한 조건.
+- modifiers: 계산값을 수정하는 효과 배열.
+- granted_encounter_ids: 특성 때문에 출력 가능해지는 인카운터 ID 목록.
+
+modifier 항목
+- target: 수정할 계산 경로. 예: task.facility.success_score.
+- operation: add, multiply 등 적용 연산.
+- value: 연산에 사용할 값.
+
+처리
+- 캐릭터가 해당 trait_id를 가졌는지 확인한다.
+- requirements를 만족하면 관련 계산 시 modifiers를 적용한다.
+- granted_encounter_ids는 상태 변화 시 런타임 인카운터 풀에 추가할 수 있다.
+
+주의
+- modifier 적용 순서를 코드에서 고정해야 한다.
+- 권장 순서는 기본값 계산, add 적용, multiply 적용, 최종 clamp다.

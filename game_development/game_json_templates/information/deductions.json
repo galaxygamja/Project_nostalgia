@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "data_type": "deduction",
+  "entries": [
+    {
+      "id": "DXXX_001",
+      "name": "내부자의 전력 차단",
+      "required_clue_ids": [
+        "LXXX_001",
+        "LXXX_002"
+      ],
+      "excluded_flags": [
+        "internal_saboteur_identified"
+      ],
+      "time_cost_slots": 4,
+      "success_formula_id": null,
+      "success_effects": [
+        {
+          "target": "flag.internal_saboteur_suspected",
+          "operation": "set",
+          "value": true
+        }
+      ],
+      "unlocked_task_ids": [
+        "TCUO_001"
+      ],
+      "unlocked_encounter_ids": [
+        "ISBO_002"
+      ]
+    }
+  ]
+}

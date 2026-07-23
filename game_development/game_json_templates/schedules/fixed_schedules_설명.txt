@@ -1,0 +1,27 @@
+fixed_schedules.json 설명
+
+목적
+- 아침 업무 보고, 하루 업무 보고 등 고정 일정의 실행 내용을 정의한다.
+- 실제 실행 날짜와 시간은 timetable.json에서 관리한다.
+
+항목
+- id: 고정 일정 ID.
+- name: UI 표시 이름.
+- duration_slots: 일정이 차지하는 30분 슬롯 수.
+- delegate_allowed: 다른 캐릭터에게 사전 위임 가능한지 여부.
+- required_skill: 대리 처리 판정에 사용할 주요 능력.
+- encounter_id: 일정 시작 시 실행할 인카운터 ID.
+- default_delegate_id: 기본 대리인 캐릭터 ID. 없으면 null.
+- requirements: 일정 실행을 위한 추가 조건.
+- absence_effects: 책임자와 대리인 모두 처리하지 못했을 때 적용할 효과.
+
+위임 처리
+1. 일정 발생 전에 지정된 대리인이 있는지 확인한다.
+2. 대리인의 생존, available, 위치, 부상, 현재 업무를 검사한다.
+3. 유효한 대리인이 있으면 책임자는 해당 일정과 겹치는 자유 행동을 선택할 수 있다.
+4. 대리인이 처리할 수 없으면 책임자 참석 필요 상태로 되돌린다.
+5. 누구도 처리하지 못하면 absence_effects를 적용한다.
+
+주의
+- 대리인은 일정이 발생한 순간이 아니라 사전에 지정한다.
+- duration_slots는 1 이상의 정수여야 한다.

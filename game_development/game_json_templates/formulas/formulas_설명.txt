@@ -1,0 +1,47 @@
+formulas.json 설명
+
+목적
+- 업무 성공 점수, 업무 시간, 조건 판정 등을 구조화된 데이터로 정의한다.
+- JSON이 계산하는 것이 아니라 Godot의 FormulaEvaluator가 expression을 해석한다.
+
+항목
+- id: 계산식 ID.
+- name: 공식 이름.
+- description: 사람이 이해하기 위한 공식 설명.
+- result_type: float, int, bool 등 예상 결과 자료형.
+- expression: 값 노드와 연산 노드로 구성된 표현식 트리.
+- clamp: 최종 결과의 minimum과 maximum.
+- fallback_value: 오류 발생 시 사용할 안전한 기본값.
+
+값 노드
+- { "constant": 0.2 }: 고정값.
+- { "variable": "assignee.fatigue" }: 계산 문맥의 변수값.
+
+연산 노드
+- operator: 실행할 연산 이름.
+- values: 피연산자 배열. 값 노드 또는 다른 연산 노드가 들어간다.
+
+숫자 연산자
+- add: 모든 값을 더한다.
+- subtract: 첫 값에서 다음 값을 순서대로 뺀다.
+- multiply: 모든 값을 곱한다.
+- divide: 첫 값을 다음 값으로 순서대로 나눈다.
+- minimum: 가장 작은 값을 반환한다.
+- maximum: 가장 큰 값을 반환한다.
+- clamp: 값을 지정 범위로 제한한다.
+- floor: 내림한다.
+- ceil: 올림한다.
+- round: 반올림한다.
+
+조건 연산자
+- equal / not_equal: 같은지 또는 다른지 판정한다.
+- greater / greater_or_equal: 큰지 또는 크거나 같은지 판정한다.
+- less / less_or_equal: 작은지 또는 작거나 같은지 판정한다.
+- and / or / not: 불리언 조건을 조합한다.
+
+안전 규칙
+- JSON 문자열을 GDScript 코드로 실행하지 않는다.
+- 허용 목록에 없는 연산자와 변수 경로는 거부한다.
+- 0으로 나눌 가능성이 있으면 fallback_value를 사용한다.
+- 표현식 깊이는 최대 32단계 정도로 제한한다.
+- 공식 간 순환 참조를 금지한다.

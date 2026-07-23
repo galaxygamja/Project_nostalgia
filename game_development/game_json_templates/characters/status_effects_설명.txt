@@ -1,0 +1,28 @@
+status_effects.json 설명
+
+목적
+- 경상, 중상, 질병, 수면 부족 등 일시적인 상태 효과를 정의한다.
+
+항목
+- id: 상태 효과 ID.
+- name: 표시 이름.
+- description: 효과 설명.
+- duration_slots: 지속되는 30분 슬롯 수.
+- stack_policy: 같은 효과가 다시 들어올 때의 처리 정책.
+- maximum_stacks: 최대 중첩 수.
+- effects_on_apply: 처음 적용될 때 한 번 실행할 효과.
+- effects_per_slot: 유지되는 동안 30분마다 실행할 효과.
+- effects_on_remove: 종료 또는 치료로 제거될 때 실행할 효과.
+
+stack_policy
+- ignore: 새 적용을 무시한다.
+- refresh_duration: 중첩하지 않고 지속 시간만 초기화한다.
+- add_stack: 중첩 수를 증가시킨다.
+- replace: 기존 효과를 새 효과로 교체한다.
+
+처리
+1. 적용 대상에게 같은 효과가 있는지 확인한다.
+2. stack_policy를 적용한다.
+3. effects_on_apply를 처리한다.
+4. 슬롯마다 effects_per_slot을 처리하고 남은 시간을 줄인다.
+5. 지속 시간이 끝나면 effects_on_remove를 처리하고 제거한다.

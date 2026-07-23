@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "data_type": "game_config",
+  "game": {
+    "max_days": 1000,
+    "slots_per_day": 48,
+    "minutes_per_slot": 30,
+    "start_day_index": 0,
+    "start_slot_index": 12,
+    "id_pattern": "^[A-Z]{4}_[0-9]{3}$"
+  },
+  "paths": {
+    "initial_state": "res://data/initial/initial_game_state.json",
+    "timetable": "res://data/timeline/timetable.json",
+    "id_code_rules": "res://data/config/id_code_rules.json"
+  }
+}

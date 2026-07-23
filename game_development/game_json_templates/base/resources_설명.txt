@@ -1,0 +1,29 @@
+resources.json 설명
+
+목적
+- 식량, 식수, 산소, 전력, 부품, 의약품 등 기지 자원을 정의한다.
+
+항목
+- id: 자원 ID.
+- name: UI 표시 이름.
+- unit: kg, L, %, 개 등의 표시 단위.
+- value_type: int 또는 float 등 논리적 자료형.
+- minimum: 허용 최솟값.
+- maximum: 허용 최댓값.
+- default_value: 별도 초기값이 없을 때의 값.
+- production_per_slot: 정상 상태에서 30분마다 생산되는 양.
+- consumption_per_slot: 정상 상태에서 30분마다 소비되는 양.
+- critical_threshold: 부족 경고 및 인카운터 조건에 사용할 임계값.
+- display_as_percentage: true이면 UI에서 백분율로 표시.
+
+시간 진행 처리
+1. 현재 시설 작동 여부와 효율을 확인한다.
+2. production_per_slot을 더한다.
+3. consumption_per_slot을 뺀다.
+4. 결과를 minimum과 maximum 사이로 제한한다.
+5. critical_threshold 진입 또는 해제 시 관련 상태 신호를 발생시킨다.
+
+유효성 검사
+- minimum <= default_value <= maximum이어야 한다.
+- critical_threshold가 허용 범위 안이어야 한다.
+- 생산량과 소비량은 원칙적으로 0 이상이어야 한다.

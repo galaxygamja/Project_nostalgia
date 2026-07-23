@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "data_type": "flag_definition",
+  "entries": [
+    {
+      "id": "QXXX_001",
+      "key": "flag_key",
+      "name": "flag_name",
+      "description": "flag_description",
+      "value_type": "bool",
+      "default_value": false
+    }
+  ]
+}

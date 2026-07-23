@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "data_type": "deduction",
+  "entries": [
+    {
+      "id": "DXXX_001",
+      "name": "deduction_name",
+      "required_clue_ids": [],
+      "excluded_flags": [],
+      "time_cost_slots": 1,
+      "success_formula_id": null,
+      "success_effects": [],
+      "unlocked_task_ids": [],
+      "unlocked_encounter_ids": []
+    }
+  ]
+}

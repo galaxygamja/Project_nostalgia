@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "data_type": "id_code_rules",
+  "id_pattern": "^[A-Z]{4}_[0-9]{3}$",
+  "reserved_sequence": "000",
+  "unused_code": "X",
+  "data_types": {
+    "A": {
+      "name": "data_type_name",
+      "positions": {
+        "2": {
+          "X": "second_position_meaning"
+        },
+        "3": {
+          "X": "third_position_meaning"
+        },
+        "4": {
+          "X": "fourth_position_meaning"
+        }
+      }
+    }
+  }
+}

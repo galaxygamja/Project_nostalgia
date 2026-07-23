@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "data_type": "facility",
+  "entries": [
+    {
+      "id": "FXXX_001",
+      "name": "발전 시설",
+      "facility_type": "power",
+      "default_state": {
+        "condition": 85.0,
+        "efficiency": 90.0,
+        "operational": true,
+        "level": 1
+      },
+      "produces": [
+        {
+          "resource_id": "RXXX_004",
+          "amount_per_slot": 1.0
+        }
+      ],
+      "consumes": [],
+      "related_task_ids": [
+        "TFNO_001"
+      ],
+      "tags": [
+        "base",
+        "critical"
+      ]
+    }
+  ]
+}

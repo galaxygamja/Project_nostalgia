@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "data_type": "clue",
+  "entries": [
+    {
+      "id": "LXXX_001",
+      "name": "절단된 전력선",
+      "description": "자연적인 파손으로 보기 어려운 흔적이다.",
+      "source_encounter_ids": [
+        "ISBO_001"
+      ],
+      "tags": [
+        "generator",
+        "sabotage"
+      ]
+    },
+    {
+      "id": "LXXX_002",
+      "name": "변조된 점검 기록",
+      "description": "점검 기록의 작성 시간이 조작되어 있다.",
+      "source_encounter_ids": [
+        "ISBO_002"
+      ],
+      "tags": [
+        "generator",
+        "record",
+        "sabotage"
+      ]
+    }
+  ]
+}

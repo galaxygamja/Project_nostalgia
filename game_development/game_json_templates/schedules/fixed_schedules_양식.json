@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "data_type": "fixed_schedule",
+  "entries": [
+    {
+      "id": "SXXX_001",
+      "name": "schedule_name",
+      "duration_slots": 1,
+      "delegate_allowed": false,
+      "required_skill": "skill_name",
+      "encounter_id": "IFGX_001",
+      "default_delegate_id": null,
+      "requirements": {},
+      "absence_effects": []
+    }
+  ]
+}

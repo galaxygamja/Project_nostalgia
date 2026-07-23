@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "data_type": "location",
+  "entries": [
+    {
+      "id": "OXXX_001",
+      "name": "중앙 통제실",
+      "category": "base_interior",
+      "description": "기지 운영을 지휘하는 중앙 통제실이다.",
+      "connected_location_ids": [
+        "OXXX_002"
+      ],
+      "requirements": {},
+      "encounter_pool_ids": [
+        "PXXX_002"
+      ],
+      "tags": [
+        "base",
+        "safe"
+      ]
+    },
+    {
+      "id": "OXXX_002",
+      "name": "발전실",
+      "category": "base_interior",
+      "description": "기지의 주요 발전 설비가 배치된 구역이다.",
+      "connected_location_ids": [
+        "OXXX_001"
+      ],
+      "requirements": {
+        "required_flags": [
+          "generator_access"
+        ]
+      },
+      "encounter_pool_ids": [
+        "PXXX_002"
+      ],
+      "tags": [
+        "base",
+        "power"
+      ]
+    }
+  ]
+}

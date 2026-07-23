@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "data_type": "encounter",
+  "entries": [
+    {
+      "id": "IRSC_001",
+      "name": "불안한 수면",
+      "category": "sleep",
+      "importance": "normal",
+      "repeat_policy": {
+        "type": "cooldown",
+        "cooldown_slots": 48,
+        "remove_after_draw": false,
+        "reset_at_day_change": false
+      },
+      "requirements": {
+        "minimum_values": {
+          "commander.stress": 70.0
+        },
+        "time_ranges": [
+          {
+            "start_slot": 36,
+            "end_slot": 47
+          },
+          {
+            "start_slot": 0,
+            "end_slot": 11
+          }
+        ]
+      },
+      "pages": [
+        {
+          "speaker_id": null,
+          "text": "잠들었지만 불길한 꿈이 이어졌다."
+        }
+      ],
+      "choices": [
+        {
+          "choice_id": "choice_01",
+          "text": "억지로 다시 잠든다.",
+          "requirements": {},
+          "effects": [
+            {
+              "target": "commander.stress",
+              "operation": "add",
+              "value": 5.0
+            }
+          ],
+          "next_encounter_id": null
+        }
+      ],
+      "automatic_effects": []
+    },
+    {
+      "id": "IFBO_001",
+      "name": "아침 업무 보고",
+      "category": "base",
+      "importance": "fixed_schedule",
+      "repeat_policy": {
+        "type": "daily_once",
+        "cooldown_slots": 0,
+        "remove_after_draw": false,
+        "reset_at_day_change": true
+      },
+      "requirements": {},
+      "pages": [
+        {
+          "speaker_id": null,
+          "text": "오늘의 기지 현황과 새 업무가 보고되었다."
+        }
+      ],
+      "choices": [],
+      "automatic_effects": []
+    },
+    {
+      "id": "IFBO_002",
+      "name": "하루 업무 보고",
+      "category": "base",
+      "importance": "fixed_schedule",
+      "repeat_policy": {
+        "type": "daily_once",
+        "cooldown_slots": 0,
+        "remove_after_draw": false,
+        "reset_at_day_change": true
+      },
+      "requirements": {},
+      "pages": [
+        {
+          "speaker_id": null,
+          "text": "오늘 처리한 업무와 기지 상태 변화가 정리되었다."
+        }
+      ],
+      "choices": [],
+      "automatic_effects": []
+    }
+  ]
+}

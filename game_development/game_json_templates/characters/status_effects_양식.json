@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "data_type": "status_effect",
+  "entries": [
+    {
+      "id": "EXXX_001",
+      "name": "status_effect_name",
+      "description": "status_effect_description",
+      "duration_slots": 1,
+      "stack_policy": "refresh_duration",
+      "maximum_stacks": 1,
+      "effects_on_apply": [],
+      "effects_per_slot": [],
+      "effects_on_remove": []
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "data_type": "character_trait",
+  "entries": [
+    {
+      "id": "GXXX_001",
+      "name": "trait_name",
+      "description": "trait_description",
+      "requirements": {},
+      "modifiers": [
+        {
+          "target": "target_path",
+          "operation": "add",
+          "value": 0.0
+        }
+      ],
+      "granted_encounter_ids": []
+    }
+  ]
+}

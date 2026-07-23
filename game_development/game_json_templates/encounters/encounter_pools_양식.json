@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "data_type": "encounter_pool",
+  "entries": [
+    {
+      "id": "PXXX_001",
+      "name": "encounter_pool_name",
+      "category": "pool_category",
+      "draw_mode": "weighted_with_replacement",
+      "reset_policy": "never",
+      "encounters": [
+        {
+          "encounter_id": "INGX_001",
+          "weight": 1.0,
+          "enabled": true
+        }
+      ]
+    }
+  ]
+}

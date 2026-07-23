@@ -1,0 +1,36 @@
+timetable.json 설명
+
+목적
+- 최대 1000일 동안 특정 시각에 실행할 고정 일정과 예약 사건을 정의한다.
+
+저장 방식
+- 논리 구조는 time_table[day_index][slot_index]이다.
+- 48000개의 빈 칸을 전부 저장하지 않고 데이터가 있는 슬롯만 기록하는 희소 구조다.
+
+최상위 항목
+- max_days: 시간표가 지원하는 날짜 수. 1000.
+- slots_per_day: 하루 슬롯 수. 48.
+- days: 특정 날짜에만 존재하는 예약 데이터.
+- repeating_schedules: 매일 또는 일정 간격으로 반복되는 일정.
+
+days 항목
+- day_index: 날짜 좌표. 0~999.
+- slots: 슬롯 번호를 문자열 키로 사용하는 객체.
+- fixed_schedule_ids: 해당 시각에 실행할 고정 일정 ID.
+- scheduled_encounter_ids: 해당 시각에 예약한 인카운터 ID.
+- task_completion_ids: 해당 시각에 완료 예정인 런타임 업무 인스턴스 ID.
+
+repeating_schedules 항목
+- schedule_id: 반복할 고정 일정 ID.
+- start_day_index: 반복 시작 날짜.
+- end_day_index: 반복 종료 날짜.
+- slot_index: 일정 시작 시각.
+- interval_days: 반복 간격. 1이면 매일.
+
+시간 예시
+- 12 = 06:00.
+- 44 = 22:00.
+
+주의
+- 슬롯 키는 JSON 객체 키이므로 "12"처럼 문자열로 기록한다.
+- 실제 일정 내용과 지속 시간은 fixed_schedules.json에서 정의한다.
