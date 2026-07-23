@@ -7,8 +7,8 @@
 `godot/minimal-data-bootstrap-runtime`은 최신 main 기준에서만 실제 D0–D5를 시작한다. 이번 baseline Goal는 `res://data` 배치, 누락 ID, IFBO, skill model, 100/1000-day wiring, viewport, UI를 수정하지 않았다. 제외 source skill 6개는 첫 bootstrap blocker가 아니며 직접 파생/대체 결정은 `EXCLUDED_SKILL_REPLACEMENT_DECISION.md`를 따른다.
 
 - 작성일: 2026-07-21
-- 계획 기준 branch: `skills/revise-existing-final-batch`
-- 계획 기준 commit: `22ef00a4cb2f3bd4bb32c5e7394e0323f8956a89`
+- 계획 기준 branch: `godot/minimal-data-bootstrap-runtime`
+- 계획 기준 commit: `ec187f14d77e84429e3cd29aeac12af167ffc39b` (환경 종료 기록 전 기준선)
 - 다음 개발 branch 제안: `godot/minimal-data-bootstrap-runtime`
 - Godot 기준: **4.7.1-stable**
 - 상태: 다음 `/goal`에서 실행
@@ -31,14 +31,14 @@
 - known validator 결과: 과거 정적 감사에서 missing-reference occurrence 17개와 IFBO 의미 문제
 - current main: console print만 수행하는 Node
 - current viewport: 900×540; canonical PC prototype target은 1920×1080
-- 정확한 Godot 4.7.1 binary: PATH·일반 설치 경로에서 `NOT_FOUND` (2026-07-21 재확인)
+- 정확한 Godot 4.7.1 binary: `C:\\Users\\User\\tools\\Godot\\4.7.1-stable\\Godot_v4.7.1-stable_win64.exe`; `4.7.1.stable.official.a13da4feb` (2026-07-24 검증)
 
 ## 3. 첫 구현 범위
 
 ### Checkpoint D0 — binary와 원본 기준선
 
-1. 사용자가 제공한 경로 또는 승인된 설치 방식으로 정확한 4.7.1-stable executable을 확보한다.
-2. `<godot> --version` 전체 출력과 SHA-256/파일 경로를 기록한다.
+1. 확정 경로의 정확한 4.7.1-stable executable을 재확인하고, 다른 버전을 사용하지 않는다.
+2. `<godot> --version` 전체 출력과 SHA-256/파일 경로를 현재 Goal log에 다시 기록한다.
 3. source와 project의 시작 SHA manifest를 기록한다.
 4. 다른 Godot 버전으로 대체하거나 editor open/save upgrade를 하지 않는다.
 
@@ -153,5 +153,5 @@ main scene에 data bootstrap 증거만 보여주는 작은 Godot Control 화면�
 ## 8. 다음 `/goal` 명령 초안
 
 ```text
-docs/plans/REAL_DEVELOPMENT_ENTRY_PLAN.md를 처음부터 끝까지 읽고 Checkpoint D0부터 D5까지 실행하라. 정확한 Godot 4.7.1-stable binary를 먼저 확인하고 다른 버전을 사용하지 마라. godot/minimal-data-bootstrap-runtime 브랜치를 skills/revise-existing-final-batch의 최신 원격 HEAD에서 생성하라. candidate JSON 20개의 SHA와 REQUIRED_DATA_FILES mapping을 검증한 뒤 승인된 deterministic runtime copy만 res://data에 배치하라. 누락 ID, IFBO, item knowledge, skill model, 100/1000일을 임의 해결하지 말고 loader→repository→validator→bootstrap smoke path와 1920×1080 최소 개발 화면을 test-first로 구현하라. 각 checkpoint를 commit·push하고 local/remote SHA를 확인하라.
+docs/plans/REAL_DEVELOPMENT_ENTRY_PLAN.md를 처음부터 끝까지 읽고 Checkpoint D0부터 D5까지 실행하라. 정확한 Godot 4.7.1-stable binary를 먼저 확인하고 다른 버전을 사용하지 마라. godot/minimal-data-bootstrap-runtime의 최신 원격 HEAD에서 계속하라. candidate JSON 20개의 SHA와 REQUIRED_DATA_FILES mapping을 검증한 뒤 승인된 deterministic runtime copy만 res://data에 배치하라. 누락 ID, IFBO, item knowledge, skill model, 100/1000일을 임의 해결하지 말고 loader→repository→validator→bootstrap smoke path와 1920×1080 최소 개발 화면을 test-first로 구현하라. 각 checkpoint를 commit·push하고 local/remote SHA를 확인하라.
 ```
