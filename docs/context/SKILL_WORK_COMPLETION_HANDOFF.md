@@ -5,6 +5,14 @@
 - Phase B 기준 commit: `22ef00a4cb2f3bd4bb32c5e7394e0323f8956a89`
 - 상태: 스킬 준비 종료, 실제 Godot 개발 진입
 
+## 0. 2026-07-24 정제 통합 및 제외 스킬 감사 갱신
+
+- 정제 main 기준 commit: `70913e11bbb98263e7452a0828f7b200f0d924de`
+- 이 main에는 7개 project skill, provenance/license records, skill plans/reports만 들어 있다.
+- `3138faf20df172263e59335410a349a8cdde4b83`는 검증된 원본 및 별도 게임 기준선 후보로 보존했다. SSoT, `game_development/`, runtime JSON, source handoff bundle은 정제 main에 넣지 않았다.
+- 제외 source 6개는 첫 bootstrap blocker가 아니다. LGPL 4개는 이번 범위에서 직접 파생하지 않고, `LICENSE_UNKNOWN` 2개는 명시 허가 전 원문·scripts·references를 사용하지 않는다. 상세 결정은 `docs/reports/EXCLUDED_SKILL_FUNCTIONAL_NEEDS_AUDIT.md`와 `docs/plans/EXCLUDED_SKILL_REPLACEMENT_DECISION.md`를 따른다.
+- 실제 Godot bootstrap은 게임 기준선 통합 여부를 별도 승인 Goal로 결정한 뒤에만 시작한다. `goal/`은 untracked 사용자 자료로 계속 보존한다.
+
 ## 1. 완료된 checkpoint
 
 - Phase A: 기반 스킬 4개와 89 scenario, 원격 보존
