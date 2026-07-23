@@ -1,12 +1,10 @@
 # Project Nostalgia 실제 Godot 개발 진입 계획
 
-## 0. 2026-07-24 정제 main 전제
+## 0. 2026-07-24 게임 기준선·환경 확인
 
-이 계획의 원래 기준에는 `game_development/godot_data_core/`가 있었다. 그러나 정제 main `70913e11bbb98263e7452a0828f7b200f0d924de`에는 의도적으로 skill-preparation allowlist만 통합됐으며, `3138faf20df172263e59335410a349a8cdde4b83`의 게임 기준선·SSoT·runtime JSON은 포함하지 않았다.
+검증된 게임 기준선은 `2a9a42be9fc4c4da0bbc35c6fe96b5128c19e0f7`에서 exact blob으로 통합됐다. Godot `4.7.1.stable.official.a13da4feb`의 import와 두 기존 headless test가 실제로 실행됐으며, 환경 상세는 `GAME_BASELINE_RUNTIME_REPORT.md`와 `DEVELOPMENT_ENVIRONMENT_HANDOFF.md`를 따른다.
 
-따라서 `godot/minimal-data-bootstrap-runtime` branch는 최신 정제 main에서 생성하되 게임 파일을 추가하지 않는다. 실제 D0–D5 구현을 시작하기 전에, 별도 승인된 기준선 통합 Goal가 후보 snapshot의 `game_development/` 및 관련 SSoT 변경을 검토·정제 통합해야 한다. 이 문서는 그 별도 통합 승인 전에는 runtime implementation을 허용하지 않는다.
-
-제외 source skill 6개는 첫 bootstrap blocker가 아니다. 직접 파생/대체 결정은 `EXCLUDED_SKILL_REPLACEMENT_DECISION.md`를 따른다.
+`godot/minimal-data-bootstrap-runtime`은 최신 main 기준에서만 실제 D0–D5를 시작한다. 이번 baseline Goal는 `res://data` 배치, 누락 ID, IFBO, skill model, 100/1000-day wiring, viewport, UI를 수정하지 않았다. 제외 source skill 6개는 첫 bootstrap blocker가 아니며 직접 파생/대체 결정은 `EXCLUDED_SKILL_REPLACEMENT_DECISION.md`를 따른다.
 
 - 작성일: 2026-07-21
 - 계획 기준 branch: `skills/revise-existing-final-batch`

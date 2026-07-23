@@ -13,6 +13,12 @@
 - 제외 source 6개는 첫 bootstrap blocker가 아니다. LGPL 4개는 이번 범위에서 직접 파생하지 않고, `LICENSE_UNKNOWN` 2개는 명시 허가 전 원문·scripts·references를 사용하지 않는다. 상세 결정은 `docs/reports/EXCLUDED_SKILL_FUNCTIONAL_NEEDS_AUDIT.md`와 `docs/plans/EXCLUDED_SKILL_REPLACEMENT_DECISION.md`를 따른다.
 - 실제 Godot bootstrap은 게임 기준선 통합 여부를 별도 승인 Goal로 결정한 뒤에만 시작한다. `goal/`은 untracked 사용자 자료로 계속 보존한다.
 
+### 환경 갱신
+
+- 게임 기준선 통합 source: `2a9a42be9fc4c4da0bbc35c6fe96b5128c19e0f7`; `3138faf`와 `game_development/`·SSoT blob이 동일하다.
+- 정확한 Godot `4.7.1.stable.official.a13da4feb` binary를 확인했고 import와 기존 headless test를 실행했다.
+- 이 Goal는 기준선만 반입했다. runtime JSON 배치와 known validation repair는 다음 구현 Goal의 별도 범위다.
+
 ## 1. 완료된 checkpoint
 
 - Phase A: 기반 스킬 4개와 89 scenario, 원격 보존
