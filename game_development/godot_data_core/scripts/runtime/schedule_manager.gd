@@ -15,6 +15,10 @@ func find_conflicts(state: GameState, start_slot: int, end_slot: int, ignore_id:
 	for schedule in state.fixed_schedules + state.free_schedules:
 		if str(schedule.get("id", "")) == ignore_id:
 			continue
+		if bool(schedule.get("completed", false)):
+			continue
+		if bool(schedule.get("fixed", false)) and state.schedule_delegates.has(str(schedule.get("id", ""))):
+			continue
 		if _overlaps(start_slot, end_slot, int(schedule.get("start_slot", -1)), int(schedule.get("end_slot", -1))):
 			conflicts.append(schedule.duplicate(true))
 	return conflicts

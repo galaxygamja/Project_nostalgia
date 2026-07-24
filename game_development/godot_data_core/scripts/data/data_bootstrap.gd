@@ -67,6 +67,7 @@ func bootstrap() -> Dictionary:
 		_print_loader_errors(load_result.get("errors", []))
 		return {
 			"ok": false,
+			"stage": "load",
 			"load": load_result,
 			"repository_errors": [],
 			"validation": {}
@@ -81,6 +82,7 @@ func bootstrap() -> Dictionary:
 		_print_repository_errors()
 		return {
 			"ok": false,
+			"stage": "repository",
 			"load": load_result,
 			"repository_errors": repository.errors.duplicate(true),
 			"validation": {}
@@ -95,6 +97,7 @@ func bootstrap() -> Dictionary:
 
 	return {
 		"ok": succeeded,
+		"stage": "validation",
 		"load": load_result,
 		"repository_errors": repository.errors.duplicate(true),
 		"validation": validation_result

@@ -17,7 +17,7 @@ func can_start_action(state: GameState, action: Dictionary) -> Dictionary:
 	if duration_slots <= 0:
 		return {"ok": false, "reason": "duration_slots must be positive"}
 	var end_slot := state.current_slot + duration_slots
-	if end_slot > state.max_days * GameState.SLOTS_PER_DAY:
+	if end_slot > state.max_days * state.slots_per_day:
 		return {"ok": false, "reason": "action exceeds the game time limit"}
 	var conflicts := schedule_manager.find_conflicts(state, state.current_slot, end_slot)
 	for conflict in conflicts:

@@ -40,9 +40,11 @@ The core lacks canonical skill definitions, level conditions, progress state, bo
 
 The data-core audit found 17 missing-reference occurrences. With `stop_on_validation_error=true`, bootstrap is blocked until these are resolved. Do not invent replacement IDs without inspecting design intent.
 
-## 6. Fixed-schedule semantic IDs
+## 6. Fixed-schedule semantic IDs — resolved 2026-07-24
 
-`IFBO_001` and `IFBO_002` use fourth-character `O` meaning one-time while their data says `daily_once`. The likely semantic IDs are `IFBD_001/002`, but changing IDs requires updating all references and approval of the intended interpretation.
+The user approved the `daily_once` interpretation. Canonical authoring and generated
+runtime data use `IFBD_001` and `IFBD_002`; the fourth-character `D` matches the
+`daily_once` policy. All known schedule and guideline references were updated together.
 
 ## 7. Existing content packages are not runtime compatible
 

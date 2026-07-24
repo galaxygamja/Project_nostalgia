@@ -7,7 +7,7 @@ const TimeManagerScript = preload("res://scripts/runtime/time_manager.gd")
 
 func _initialize() -> void:
 	var state := GameStateScript.new()
-	state.initialize({}, 100)
+	state.initialize({}, {"max_days": 100, "slots_per_day": 48, "minutes_per_slot": 30})
 	var schedules := ScheduleManagerScript.new()
 	assert(schedules.add_fixed_schedule(state, {"id": "sleep", "start_slot": 2, "end_slot": 4}).ok)
 	var time := TimeManagerScript.new()

@@ -1,5 +1,21 @@
 # Project Nostalgia 실제 Godot 개발 진입 계획
 
+## 2026-07-24 기반 엔진 Goal 실행 범위
+
+사용자 결정에 따라 첫 구현은 **기반 엔진만** 구축한다. 타이틀 화면, 개발용 화면,
+메인 플레이 UI는 만들지 않는다. 다음 UI Goal은 타이틀 없이 메인 플레이 화면만
+구축하며, 이 Goal의 headless runtime session을 조회한다.
+
+- actual runtime 입력: `game_json_templates`의 non-양식 JSON 20개를 SHA manifest와
+  함께 `godot_data_core/res://data`로 exact copy한다.
+- bootstrap은 load/repository/validation 단계를 구조화해 반환하고,
+  알려진 17 errors/1 warning을 숨기지 않는다.
+- repository에서 initial state, resource, action, timetable, fixed schedule을 읽어
+  config 기반 시간·일정·행동·자원 tick을 실행하는 foundation만 만든다.
+- 인카운터 발생/선택 해결, task·trait·status effect 확장 target, save/load,
+  3일 콘텐츠 완주와 UI는 다음 Goal로 미룬다.
+- 미승인 missing ID, IFBO 의미, skill model, 전체 게임 기간은 변경하지 않는다.
+
 ## 0. 2026-07-24 게임 기준선·환경 확인
 
 검증된 게임 기준선은 `2a9a42be9fc4c4da0bbc35c6fe96b5128c19e0f7`에서 exact blob으로 통합됐다. Godot `4.7.1.stable.official.a13da4feb`의 import와 두 기존 headless test가 실제로 실행됐으며, 환경 상세는 `GAME_BASELINE_RUNTIME_REPORT.md`와 `DEVELOPMENT_ENVIRONMENT_HANDOFF.md`를 따른다.
